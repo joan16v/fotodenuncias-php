@@ -1,0 +1,105 @@
+body {
+	font-size:11px;
+	font-family:Georgia,Arial;
+	color:#666;	
+	text-align:center;
+	background:#ebf5fa url(images/fondo_body.jpg) repeat-x;
+}
+
+#container {
+	position:relative;
+	width:800px;
+	text-align:left;
+	margin:auto;
+	border:1px solid #ddd;
+	margin-top:10px;
+    margin-bottom:20px;
+	padding:10px;
+	padding-top:5px;
+	background:#fff;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    -moz-box-shadow: 2px 2px 8px #999; -webkit-box-shadow: 2px 2px 8px #999; box-shadow: 2px 2px 8px #999;    
+}
+
+#logo{
+    text-align:left;
+}
+
+h1 {
+	font-size:20px;
+	font-weight:normal;
+	font-family:Georgia,Arial;
+	color:#999;	
+}
+
+h2 {
+	font-size:14px;
+	font-weight:normal;
+	font-family:Georgia,Arial;
+	color:#999;	
+    border-bottom:1px solid #ddd;
+}
+
+#menu {
+	position:relative;
+	float:left;
+	width:150px;
+	margin-left:5px;
+    margin-top:11px;
+}
+
+#contenido {
+	position:relative;
+	float:right;
+	width:600px;
+	margin-right:20px;
+}
+
+#pie{
+	position:relative;
+	width:800px;
+	text-align:right;
+	font-size:10px;
+	color:#bbb;
+	font-style:italic;
+	padding-right:10px;
+	padding-top:15px;
+}
+
+img {
+	border:0px;
+}
+
+input{
+	width:400px;
+	padding:2px;
+	font-family:Georgia,arial;
+	font-size:11px;
+	font-weight:bolder;
+	letter-spacing:2px;
+	border:1px solid #bbb;
+}
+
+textarea{
+	border:1px solid #bbb;
+	width:400px;
+	padding:2px;
+	height:100px;
+	font-family:Georgia,arial;
+	font-size:11px;
+	font-weight:bolder;
+	letter-spacing:2px;
+	overflow:hidden;
+}
+
+a{
+	text-decoration:none;
+	color:#999;
+    font-weight:bold;    
+}
+
+a:hover{
+	text-decoration:underline;
+	color:#666;
+}
