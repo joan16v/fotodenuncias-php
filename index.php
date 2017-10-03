@@ -15,8 +15,7 @@ include('include/application_top.php');
 
 <?php
 
-//inclusion de metatags
-include('metas.php');
+    include('metas.php');
 
 ?>
 
@@ -41,7 +40,7 @@ function subir_foto_denuncia() {
         }
     }     
     if( !permitida ) {
-        alert("¡La foto debe ser JPEG, GIF o PNG!");
+        alert("Â¡La foto debe ser JPEG, GIF o PNG!");
         $('fileUpload').value="";
     } else {        
         $('informacion').innerHTML='<p style="text-align:center">Subiendo foto. Un momento por favor...</p><p style="text-align:center"><img src="images/ajax-loader.gif"></p>';
@@ -111,11 +110,11 @@ function showResponse(xmlHttpRequest, responseHeader) {
             <a href="http://itunes.apple.com/es/app/fotodenuncias/id526654188?mt=8" target="_blank" title="fotodenuncias app en la App Store"><img src="/images/app_store.png" /></a>      
         </div>             
             
-		<div id="menu">        
-            <? include("menuPrin.php"); ?>
-		</div>
+	    <div id="menu">        
+                <? include("menuPrin.php"); ?>
+	    </div>
 		
-		<div id="contenido">
+	    <div id="contenido">
 		
             <!-- sube tu denuncia -->
             <div id="esta_es"></div>
@@ -137,7 +136,7 @@ function showResponse(xmlHttpRequest, responseHeader) {
             <!-- fin de sube tu denuncia -->   
             
             <div id="informacion" style="margin-top: 40px;">
-                <img src="images/info.jpg" alt="info sobre foto denuncias" style="float: left; margin-right:10px;" /> <h2>¿Qué es fotodenuncias.net?</h2><p><b>fotodenuncias.net</b> es un portal para denunciar mediante fotografías aquellos hechos que nos preocupan o que nos molestan y que nadie hace nada por remediar.</p><p>Es una forma de protestar, por ejemplo, sobre el mal estado en el que está nuestra calle, o lo poco cuidado que está nuestro parque. </p><p>Para <strong>añadir una foto-denuncia</strong>, simplemente haz click en el botón <strong>"Examinar"</strong> que puedes observar arriba y elije la foto de tu ordenador. A continuación deberás escribir una pequeña descripción del hecho que quieres denunciar, y listo! Haz click en <strong>"Publicar"</strong> y tendrás tu foto añadida.</p>
+                <img src="images/info.jpg" alt="info sobre foto denuncias" style="float: left; margin-right:10px;" /> <h2>Â¿QuÃ© es fotodenuncias.net?</h2><p><b>fotodenuncias.net</b> es un portal para denunciar mediante fotografÃ­as aquellos hechos que nos preocupan o que nos molestan y que nadie hace nada por remediar.</p><p>Es una forma de protestar, por ejemplo, sobre el mal estado en el que estÃ¡ nuestra calle, o lo poco cuidado que estÃ¡ nuestro parque. </p><p>Para <strong>aÃ±adir una foto-denuncia</strong>, simplemente haz click en el botÃ³n <strong>"Examinar"</strong> que puedes observar arriba y elije la foto de tu ordenador. A continuaciÃ³n deberÃ¡s escribir una pequeÃ±a descripciÃ³n del hecho que quieres denunciar, y listo! Haz click en <strong>"Publicar"</strong> y tendrÃ¡s tu foto aÃ±adida.</p>
                 
                 <div style="position: relative; margin-top:50px;">
                     <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.fotodenuncias.net&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>            
@@ -160,7 +159,7 @@ function showResponse(xmlHttpRequest, responseHeader) {
                 </div>
                 
                 <div style="margin-top: 20px;">
-                    <h2>Estadísticas</h2>
+                    <h2>EstadÃ­sticas</h2>
                 </div>                  
                 <div style="margin-top: 20px;">
                     <table><tr><td><a title="RSS de fotodenuncias.net" href="http://www.fotodenuncias.net/rss/"><img src="images/rss_icon.jpg" /></a></td><td><a title="RSS de fotodenuncias.net" href="http://www.fotodenuncias.net/rss/">RSS de fotodenuncias.net</a></td></tr></table>
@@ -175,7 +174,7 @@ function showResponse(xmlHttpRequest, responseHeader) {
                     <table><tr><td><img src="images/notepad.jpg" /></td><td><b><? echo mysql_num_rows(mysql_query("select * from comentarios")); ?></b> comentarios escritos.</td></tr></table>
                 </div>                  
                 <div style="margin-top: 40px;">
-                    <h2>Más foto-denuncias:</h2>
+                    <h2>MÃ¡s foto-denuncias:</h2>
                     <?                    
                     $sql21="select * from denuncias where descripcion<>'' and activa=1 order by id desc limit 30";
                     $ex21=mysql_query($sql21);
@@ -194,7 +193,7 @@ function showResponse(xmlHttpRequest, responseHeader) {
 		<div style="clear:both"><!-- separador --></div>
 		
 		<div id="pie">
-             <? include("include/pie.php"); ?>
+                <? include("include/pie.php"); ?>
         </div>
 
 </div>
