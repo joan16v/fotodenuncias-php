@@ -20,15 +20,11 @@ include('metas.php');
 
 ?>
 
-<meta name="google-site-verification" content="B019cogsoitxoEqGsEp3Fjl-b9MBwlea6EhiMjW6I9Y" />
-
 <link rel="stylesheet" href="estilos.css" type="text/css">
 <link rel="shortcut icon" href="favicon.gif" >
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.fotodenuncias.net/rss"> 
-
 <script type="text/javascript" src="scripts/swfobject.js"></script>
 <script type="text/javascript" src="scripts/prototype.js"></script>
-
 <script type="text/javascript" src="scripts/si.files.js"></script>
 
 </head>
