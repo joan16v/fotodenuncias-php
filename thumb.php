@@ -1,19 +1,5 @@
 <?
 
-/*
-include ('Thumbnail.class.php');
-$thumb=new Thumbnail($_GET['foto']);	        // Contructor and set source image file
-$thumb->quality=85;                         // [OPTIONAL] default 75 , only for JPG format
-$thumb->output_format='JPG';                // [OPTIONAL] JPG | PNG
-// Inicio de la marca de agua
-//$thumb->img_watermark='imgTemplate/marcaAguaNueveonce.png';	    // [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2 ]
-//$thumb->img_watermark_Valing='BOTTOM';   	    // [OPTIONAL] set watermark vertical position, TOP | CENTER | BOTTON
-//$thumb->img_watermark_Haling='RIGHT';   	    // [OPTIONAL] set watermark horizonatal position, LEFT | CENTER | RIGHT
-// Fin de la marca de agua
-$thumb->size(150,100);		            // [OPTIONAL] set the biggest width and height for thumbnail
-$thumb->process();   				        // generate image
-$thumb->show();
-*/
 
 	$cambasAncho=150;
     $cambasAlto=75;
