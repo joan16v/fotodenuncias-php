@@ -1,6 +1,6 @@
 
 <div style="margin-bottom: 20px;">
-    <div style="color: #FFAF33;">¿Te gusta fotodenuncias.net? Haz una pequeña donación con <b>Paypal</b> y ayuda a que se mantenga!</div>
+    <div style="color: #FFAF33;">Â¿Te gusta fotodenuncias.net? Haz una pequeÃ±a donaciÃ³n con <b>Paypal</b> y ayuda a que se mantenga!</div>
     <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_xclick" />
     <input type="hidden" name="business" value="joan16v@gmail.com" />
@@ -14,7 +14,6 @@
 <h1 style="text-align: center; color:#5AADD9; font-size:16px; border-bottom:1px solid #ccc; text-shadow: 2px 2px 2px #ADDCF5;">foto denuncias</h1>
 <? 
 
-//$sql2="select * from denuncias where descripcion<>'' and activa=1 order by id desc limit 8";
 $sql2="select * from denuncias where descripcion<>'' and activa=1 order by rand() limit 8";
 
 if( isset($_GET['denuncia']) ) {
