@@ -6,11 +6,11 @@
 
 include('include/application_top.php');
 
-if( isset($_GET['denuncia']) ) {
-    $_GET['denuncia']=GetSQLValueString($_GET['denuncia'],"int");
+if (isset($_GET['denuncia'])) {
+    $_GET['denuncia'] = GetSQLValueString($_GET['denuncia'], "int");
 }
-if( isset($_POST['denuncia']) ) {
-    $_POST['denuncia']=GetSQLValueString($_POST['denuncia'],"int");
+if (isset($_POST['denuncia'])) {
+    $_POST['denuncia'] = GetSQLValueString($_POST['denuncia'], "int");
 }
 
 if( isset($_POST['denuncia']) ) {
@@ -220,7 +220,7 @@ echo implode(",",$arr2); ?>, foto, denuncia" />
                     $sqlcom="select * from comentarios where id_denuncia='".$_GET['denuncia']."' order by fecha asc";
                     $excom=mysql_query($sqlcom); $i=1;
                     while( $rowcom=mysql_fetch_object($excom) ) {
-                        $nick="anónimo";
+                        $nick="anÃ³nimo";
                         if( $rowcom->nick!="" ) $nick=$rowcom->nick;
                         if( $rowcom->email!="" ) $nick="<a style=\"color:#333\" href=\"mailto:".$rowcom->email."\">".$nick."</a>";
                         ?><div style="margin-top: 10px;"><span style="font-size: 18px; color:#bbb;">#<?=$i?></span> <? echo stripslashes($rowcom->comentario); ?>&nbsp;&nbsp;&nbsp;<b>@<? echo $nick; ?></b> <span style="color: #ccc;"><? echo $rowcom->fecha; ?></span></div><?
@@ -229,7 +229,7 @@ echo implode(",",$arr2); ?>, foto, denuncia" />
                     ?>
                 </div>                
                 <div style="color: #999; margin-top:40px;">
-                    <h2 style="color: #777; text-shadow: 2px 2px 2px #ddd;">Añade tu comentario</h2>
+                    <h2 style="color: #777; text-shadow: 2px 2px 2px #ddd;">AÃ±ade tu comentario</h2>
                     <form action="foto.php" id="enviar_comment" method="post">
                         <input type="hidden" name="denuncia" value="<? echo $_GET['denuncia']; ?>" />
                         <div>Tu nombre/nick:<br /><input type="text" name="nick" /></div>
