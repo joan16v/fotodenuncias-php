@@ -13,22 +13,17 @@ if (isset($_POST['denuncia'])) {
     $_POST['denuncia'] = GetSQLValueString($_POST['denuncia'], "int");
 }
 
-if( isset($_POST['denuncia']) ) {
-    if( (trim($_POST['comentario'])!="") && ($_POST['suma']==$_SESSION['suma']) ) {
-        
-        if( substr_count($_POST['comentario'],"[url=")==0 ) {
-         
+if (isset($_POST['denuncia'])) {
+    if ((trim($_POST['comentario']) != "") && ($_POST['suma'] == $_SESSION['suma'])) {        
+        if (substr_count($_POST['comentario'], "[url=") == 0) {         
             $insert="insert into comentarios (nick,email,comentario,fecha,id_denuncia,ip) values ('".addslashes(strip_tags($_POST['nick']))."','".addslashes(strip_tags($_POST['email']))."','".addslashes(strip_tags($_POST['comentario']))."',now(),'".addslashes(strip_tags($_POST['denuncia']))."','".$_SERVER['REMOTE_ADDR']."')";
-            mysql_query($insert);       
-            
-            //mail("joan16v@gmail.com","comentario en foto-denuncia ".addslashes(strip_tags($_POST['denuncia']))." publicado","comentario en foto-denuncia publicado");  
-            
-        }        
-
+            mysql_query($insert);
+        }
     }
-    $row=mysql_fetch_object(mysql_query("select * from denuncias where id='".$_POST['denuncia']."'"));
-    header("Location: foto.php?denuncia=".$_POST['denuncia']."&desc=".formatearNombre($row->descripcion));
-    exit(0);    
+
+    $row = mysql_fetch_object(mysql_query("select * from denuncias where id='" . $_POST['denuncia'] . "'"));
+    header("Location: foto.php?denuncia=" . $_POST['denuncia'] . "&desc=" . formatearNombre($row->descripcion));
+    exit(0);
 }
 
 if( mysql_num_rows(mysql_query("select * from denuncias where id='".$_GET['denuncia']."'"))==0 ) {
