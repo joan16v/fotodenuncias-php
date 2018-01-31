@@ -1,4 +1,5 @@
-<?
+<?php
+
 /**
 *This is a class that can process an image on the fly by either generate a thumbnail, apply an watermark to the image, or resize it.
 *
@@ -61,7 +62,6 @@ $image = $thumb->dump();                    // get the image
 echo ($thumb->error_msg);                   // print Error Mensage
 //----------------------------------------------
 ################################################  */
-
 
 class Thumbnail {
     /**
@@ -662,7 +662,7 @@ class Thumbnail {
 
 
         /**
-        * NOT USED : to do: mezclar imagenes a tamaño original, preservar canal alpha y redimensionar
+        * NOT USED : to do: mezclar imagenes a tamaÃ±o original, preservar canal alpha y redimensionar
         * Merge multiple images and keep transparency
         * $i is and array of the images to be merged:
         * $i[1] will be overlayed over $i[0]
