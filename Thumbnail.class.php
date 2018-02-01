@@ -22,47 +22,6 @@
 * @copyright GNU General Public License (GPL)
 **/
 
-/*
-//  Sample -------------------------------------
-$thumb=new Thumbnail("source.jpg");	        // set source image file
-
-$thumb->size_width(100);				    // set width for thumbnail, or
-$thumb->size_height(300);				    // set height for thumbnail, or
-$thumb->size_auto(200);					    // set the biggest width or height for thumbnail
-$thumb->size(150,113);		                // set the biggest width and height for thumbnail
-
-$thumb->quality=75;                        //default 75 , only for JPG format
-$thumb->output_format='JPG';               // JPG | PNG
-$thumb->jpeg_progressive=0;                // set progressive JPEG : 0 = no , 1 = yes
-$thumb->allow_enlarge=false;               // allow to enlarge the thumbnail
-$thumb->CalculateQFactor(10000);           // Calculate JPEG quality factor for a specific size in bytes
-$thumb->bicubic_resample=true;             // [OPTIONAL] set resample algorithm to bicubic
-
-$thumb->img_watermark='watermark.png';	    // [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2 ]
-$thumb->img_watermark_Valing='TOP';   	    // [OPTIONAL] set watermark vertical position, TOP | CENTER | BOTTOM
-$thumb->img_watermark_Haling='LEFT';   	    // [OPTIONAL] set watermark horizonatal position, LEFT | CENTER | RIGHT
-
-$thumb->txt_watermark='Watermark text';	    // [OPTIONAL] set watermark text [RECOMENDED ONLY WITH GD 2 ]
-$thumb->txt_watermark_color='000000';	    // [OPTIONAL] set watermark text color , RGB Hexadecimal[RECOMENDED ONLY WITH GD 2 ]
-$thumb->txt_watermark_font=1;	            // [OPTIONAL] set watermark text font: 1,2,3,4,5
-$thumb->txt_watermark_Valing='TOP';   	    // [OPTIONAL] set watermark text vertical position, TOP | CENTER | BOTTOM
-$thumb->txt_watermark_Haling='LEFT';       // [OPTIONAL] set watermark text horizonatal position, LEFT | CENTER | RIGHT
-$thumb->txt_watermark_Hmargin=10;          // [OPTIONAL] set watermark text horizonatal margin in pixels
-$thumb->txt_watermark_Vmargin=10;           // [OPTIONAL] set watermark text vertical margin in pixels
-
-$thumb->->memory_limit='32M';               //[OPTIONAL] set maximun memory usage, default 32 MB ('32M'). (use '16M' or '32M' for litter images)
-$thumb->max_execution_time'30';             //[OPTIONAL] set maximun execution time, default 30 seconds ('30'). (use '60' for big images o slow server)
-
-$thumb->process();   				        // generate image
-
-$thumb->show();						        // show your thumbnail, or
-$thumb->save("thumbnail.jpg");			    // save your thumbnail to file, or
-$image = $thumb->dump();                    // get the image
-
-echo ($thumb->error_msg);                   // print Error Mensage
-//----------------------------------------------
-################################################  */
-
 class Thumbnail {
     /**
     *@access public
