@@ -119,7 +119,6 @@ class Thumbnail {
     **/
     var $error_msg='';
 
-
     /**
     *@access private
     *@var mixed images
@@ -132,10 +131,10 @@ class Thumbnail {
     *@param string filename of the source image file
     *@return boolean
     **/
-	function Thumbnail($imgfile) 	{
-    	$img_info =  getimagesize( $imgfile );
+	function Thumbnail($imgfile) {
+    	$img_info = getimagesize($imgfile);
         //detect image format
-        switch( $img_info[2] ){
+        switch ($img_info[2]){
 	    		case 2:
 	    			//JPEG
 	    			$this->img["format"]="JPEG";
