@@ -28,16 +28,19 @@ class Thumbnail {
     *@var integer Quality factor for JPEG output format, default 75
     **/
     var $quality=75;
+
     /**
     *@access public
     *@var string output format, default JPG, valid values 'JPG' | 'PNG'
     **/
     var $output_format='JPG';
+
     /**
     *@access public
     *@var integer set JPEG output format to progressive JPEG : 0 = no , 1 = yes
     **/
     var $jpeg_progressive=0;
+
     /**
     *@access public
     *@var boolean allow to enlarge the thumbnail.
@@ -49,11 +52,13 @@ class Thumbnail {
     *@var string [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2 ]
     **/
     var $img_watermark='';
+
     /**
     *@access public
     *@var string [OPTIONAL] set watermark vertical position, TOP | CENTER | BOTTOM
     **/
     var $img_watermark_Valing='TOP';
+
     /**
     *@access public
     *@var string [OPTIONAL] set watermark horizonatal position, LEFT | CENTER | RIGHT
@@ -65,36 +70,43 @@ class Thumbnail {
     *@var string [OPTIONAL] set watermark text [RECOMENDED ONLY WITH GD 2 ]
     **/
     var $txt_watermark='';
+
     /**
     *@access public
     *@var string [OPTIONAL] set watermark text color , RGB Hexadecimal[RECOMENDED ONLY WITH GD 2 ]
     **/
     var $txt_watermark_color='000000';
+
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text font: 1,2,3,4,5
     **/
     var $txt_watermark_font=1;
+
     /**
     *@access public
     *@var string  [OPTIONAL] set watermark text vertical position, TOP | CENTER | BOTTOM
     **/
     var $txt_watermark_Valing='TOP';
+
     /**
     *@access public
     *@var string [OPTIONAL] set watermark text horizonatal position, LEFT | CENTER | RIGHT
     **/
     var $txt_watermark_Haling='LEFT';
+
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text horizonatal margin in pixels
     **/
     var $txt_watermark_Hmargin=10;
+
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text vertical margin in pixels
     **/
     var $txt_watermark_Vmargin=10;
+
     /**
     *@access public
     *@var bool [OPTIONAL] set resample algorithm to bicubic
@@ -131,32 +143,32 @@ class Thumbnail {
     *@param string filename of the source image file
     *@return boolean
     **/
-	function Thumbnail($imgfile) {
-    	$img_info = getimagesize($imgfile);
+    function Thumbnail($imgfile) {
+        $img_info = getimagesize($imgfile);
         //detect image format
         switch ($img_info[2]){
-	    		case 2:
-	    			//JPEG
-	    			$this->img["format"]="JPEG";
-	    			$this->img["src"] = ImageCreateFromJPEG ($imgfile);
-        		break;
-	    		case 3:
-	    			//PNG
-	    			$this->img["format"]="PNG";
-	    			$this->img["src"] = ImageCreateFromPNG ($imgfile);
+                case 2:
+                    //JPEG
+                    $this->img["format"]="JPEG";
+                    $this->img["src"] = ImageCreateFromJPEG ($imgfile);
+                break;
+                case 3:
+                    //PNG
+                    $this->img["format"]="PNG";
+                    $this->img["src"] = ImageCreateFromPNG ($imgfile);
                     $this->img["des"] =  $this->img["src"];
-  	    		break;
-	    		default:
-	                $this->error_msg="Not Supported File";
-	 				return false;
-	    }//case
-		$this->img["x"] = $img_info[0];  //original dimensions
-		$this->img["y"] = $img_info[1];
+                break;
+                default:
+                    $this->error_msg="Not Supported File";
+                    return false;
+        }//case
+        $this->img["x"] = $img_info[0];  //original dimensions
+        $this->img["y"] = $img_info[1];
         $this->img["x_thumb"]= $this->img["x"];  //thumbnail dimensions
         $this->img["y_thumb"]= $this->img["y"];
         $this->img["des"] =  $this->img["src"]; // thumbnail = original
-		return true;
-	}
+        return true;
+    }
 
     /**
     *set height for thumbnail
@@ -164,11 +176,11 @@ class Thumbnail {
     *@param integer height
     *@return boolean
     **/
-	function size_height($size=100) {
+    function size_height($size=100) {
             //height
             $this->img["y_thumb"]=$size;
             if ($this->allow_enlarge==true) {
-        	    $this->img["y_thumb"]=$size;
+                $this->img["y_thumb"]=$size;
             } else {
                 if ($size < ($this->img["y"])) {
                     $this->img["y_thumb"]=$size;
@@ -183,7 +195,7 @@ class Thumbnail {
                 $this->error_msg="Invalid size : Y";
                 return false;
             }
-	}
+    }
 
     /**
     *set width for thumbnail
@@ -191,10 +203,10 @@ class Thumbnail {
     *@param integer width
     *@return boolean
     **/
-	function size_width($size=100)  {
-    	//width
+    function size_width($size=100)  {
+        //width
             if ($this->allow_enlarge==true) {
-        	    $this->img["x_thumb"]=$size;
+                $this->img["x_thumb"]=$size;
             } else {
                 if ( $size < ($this->img["x"])) {
                     $this->img["x_thumb"]=$size;
@@ -217,14 +229,14 @@ class Thumbnail {
     *@param integer width or height
     *@return boolean
     **/
-	function size_auto($size=100)   {
-		//size
-		if ($this->img["x"]>=$this->img["y"]) {
-    		$this->size_width($size);
-		} else {
-    		$this->size_height($size);
- 		}
-	}
+    function size_auto($size=100)   {
+        //size
+        if ($this->img["x"]>=$this->img["y"]) {
+            $this->size_width($size);
+        } else {
+            $this->size_height($size);
+        }
+    }
 
 
     /**
@@ -234,14 +246,14 @@ class Thumbnail {
     *@param integer height
     *@return boolean
     **/
-	function size($size_x,$size_y)   {
-		//size
-		if ( (($this->img["x"])/$size_x) >=  (($this->img["y"])/$size_y) ) {
-    		$this->size_width($size_x);
-		} else {
-    		$this->size_height($size_y);
- 		}
-	}
+    function size($size_x,$size_y)   {
+        //size
+        if ( (($this->img["x"])/$size_x) >=  (($this->img["y"])/$size_y) ) {
+            $this->size_width($size_x);
+        } else {
+            $this->size_height($size_y);
+        }
+    }
 
 
     /**
@@ -249,26 +261,26 @@ class Thumbnail {
     *@access public
     *@return void
     **/
-	function show() {
-		//show thumb
-		Header("Content-Type: image/".$this->img["format"]);
+    function show() {
+        //show thumb
+        Header("Content-Type: image/".$this->img["format"]);
         if ($this->output_format=="PNG") { //PNG
-    	imagePNG($this->img["des"]);
-    	} else {
+        imagePNG($this->img["des"]);
+        } else {
             imageinterlace( $this->img["des"], $this->jpeg_progressive);
-         	imageJPEG($this->img["des"],"",$this->quality);
+            imageJPEG($this->img["des"],"",$this->quality);
         }
-	}
+    }
 
     /**
     *return the result thumbnail
     *@access public
     *@return mixed
     **/
-	function dump() {
-		//dump thumb
-		return $this->img["des"];
-	}
+    function dump() {
+        //dump thumb
+        return $this->img["des"];
+    }
 
     /**
     *save your thumbnail to file
@@ -276,20 +288,20 @@ class Thumbnail {
     *@param string output file name
     *@return boolean
     **/
-	function save($save="")	{
-		//save thumb
-	    if (empty($save)) {
+    function save($save="") {
+        //save thumb
+        if (empty($save)) {
             $this->error_msg='Not Save File';
             return false;
         }
         if ($this->output_format=="PNG") { //PNG
-    	    imagePNG($this->img["des"],"$save");
-    	} else {
+            imagePNG($this->img["des"],"$save");
+        } else {
            imageinterlace( $this->img["des"], $this->jpeg_progressive);
            imageJPEG($this->img["des"],"$save",$this->quality);
         }
         return true;
-	}
+    }
 
     /**
     *generate image
@@ -304,12 +316,12 @@ class Thumbnail {
         $X_des =$this->img["x_thumb"];
         $Y_des =$this->img["y_thumb"];
 
-   		//if ($this->checkgd2()) {
+        //if ($this->checkgd2()) {
         $gd_version=$this->gdVersion();
         if ($gd_version>=2) {
         //if (false) {
 
-        		$this->img["des"] = ImageCreateTrueColor($X_des,$Y_des);
+                $this->img["des"] = ImageCreateTrueColor($X_des,$Y_des);
 
                 if ($this->txt_watermark!='' ) {
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
@@ -333,7 +345,7 @@ class Thumbnail {
                     imagestring ( $this->img["des"], $this->txt_watermark_font, $this->calc_text_position_H() , $this->calc_text_position_V(), $this->txt_watermark,$txt_color);
                 }
         } else {
-         		$this->img["des"] = ImageCreate($X_des,$Y_des);
+                $this->img["des"] = ImageCreate($X_des,$Y_des);
                 if ($this->txt_watermark!='' ) {
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                     $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
@@ -587,34 +599,34 @@ class Thumbnail {
     *@return string full path of the file to save. Exmaple '/img/picture_my_foto_94949.jpg'
     **/
     function unique_filename ( $archive_dir , $filename , $file_prefix='') {
-    	// checkemaos if file exists
-    	$extension= strtolower( substr( strrchr($filename, ".") ,1) );
-    	$name=str_replace(".".$extension,'',$filename);
+        // checkemaos if file exists
+        $extension= strtolower( substr( strrchr($filename, ".") ,1) );
+        $name=str_replace(".".$extension,'',$filename);
 
-    	//	only alfanumerics characters
-    	$string_tmp = $name;
-    	$name='';
-    	while ($string_tmp!='') {
-    		$character=substr ($string_tmp, 0, 1);
-    		$string_tmp=substr ($string_tmp, 1);
-    		if (eregi("[abcdefghijklmnopqrstuvwxyz0-9]", $character)) {
-    			$name=$name.$character;
-    		} else {
-    			$name=$name.'_';
-    		}
+        //  only alfanumerics characters
+        $string_tmp = $name;
+        $name='';
+        while ($string_tmp!='') {
+            $character=substr ($string_tmp, 0, 1);
+            $string_tmp=substr ($string_tmp, 1);
+            if (eregi("[abcdefghijklmnopqrstuvwxyz0-9]", $character)) {
+                $name=$name.$character;
+            } else {
+                $name=$name.'_';
+            }
 
-    	}
+        }
 
-    	$destination = $file_prefix."_".$name.".".$extension;
+        $destination = $file_prefix."_".$name.".".$extension;
 
-    	while (file_exists($archive_dir."/".$destination)) {
-    		// if exist, add a random number to the file name
-    		srand((double)microtime()*1000000); // random number inizializzation
-    		$destination = $file_prefix."_".$name."_".rand(0,999999999).".".$extension;
-    	}
+        while (file_exists($archive_dir."/".$destination)) {
+            // if exist, add a random number to the file name
+            srand((double)microtime()*1000000); // random number inizializzation
+            $destination = $file_prefix."_".$name."_".rand(0,999999999).".".$extension;
+        }
 
 
-    	return ($destination);
+        return ($destination);
     }
 
 
@@ -665,4 +677,3 @@ class Thumbnail {
          return $s;
         }
 }
-?>
