@@ -22,114 +22,115 @@
 * @copyright GNU General Public License (GPL)
 **/
 
-class Thumbnail {
+class Thumbnail
+{
     /**
     *@access public
     *@var integer Quality factor for JPEG output format, default 75
     **/
-    var $quality=75;
+    var $quality = 75;
 
     /**
     *@access public
     *@var string output format, default JPG, valid values 'JPG' | 'PNG'
     **/
-    var $output_format='JPG';
+    var $output_format = 'JPG';
 
     /**
     *@access public
     *@var integer set JPEG output format to progressive JPEG : 0 = no , 1 = yes
     **/
-    var $jpeg_progressive=0;
+    var $jpeg_progressive = 0;
 
     /**
     *@access public
     *@var boolean allow to enlarge the thumbnail.
     **/
-    var $allow_enlarge=false;
+    var $allow_enlarge = false;
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2 ]
     **/
-    var $img_watermark='';
+    var $img_watermark = '';
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark vertical position, TOP | CENTER | BOTTOM
     **/
-    var $img_watermark_Valing='TOP';
+    var $img_watermark_Valing = 'TOP';
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark horizonatal position, LEFT | CENTER | RIGHT
     **/
-    var $img_watermark_Haling='LEFT';
+    var $img_watermark_Haling = 'LEFT';
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark text [RECOMENDED ONLY WITH GD 2 ]
     **/
-    var $txt_watermark='';
+    var $txt_watermark = '';
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark text color , RGB Hexadecimal[RECOMENDED ONLY WITH GD 2 ]
     **/
-    var $txt_watermark_color='000000';
+    var $txt_watermark_color = '000000';
 
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text font: 1,2,3,4,5
     **/
-    var $txt_watermark_font=1;
+    var $txt_watermark_font = 1;
 
     /**
     *@access public
     *@var string  [OPTIONAL] set watermark text vertical position, TOP | CENTER | BOTTOM
     **/
-    var $txt_watermark_Valing='TOP';
+    var $txt_watermark_Valing = 'TOP';
 
     /**
     *@access public
     *@var string [OPTIONAL] set watermark text horizonatal position, LEFT | CENTER | RIGHT
     **/
-    var $txt_watermark_Haling='LEFT';
+    var $txt_watermark_Haling = 'LEFT';
 
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text horizonatal margin in pixels
     **/
-    var $txt_watermark_Hmargin=10;
+    var $txt_watermark_Hmargin = 10;
 
     /**
     *@access public
     *@var integer [OPTIONAL] set watermark text vertical margin in pixels
     **/
-    var $txt_watermark_Vmargin=10;
+    var $txt_watermark_Vmargin = 10;
 
     /**
     *@access public
     *@var bool [OPTIONAL] set resample algorithm to bicubic
     **/
-    var $bicubic_resample=false;
+    var $bicubic_resample = false;
 
     /**
     *@access public
     *@var string [OPTIONAL] set maximun memory usage, default 8 MB ('8M'). (use '16M' for big images)
     **/
-    var $memory_limit='32M';
+    var $memory_limit = '32M';
 
     /**
     *@access public
     *@var string [OPTIONAL] set maximun execution time, default 30 seconds ('30'). (use '60' for big images)
     **/
-    var $max_execution_time='30';
+    var $max_execution_time = '30';
 
     /**
     *@access public
     *@var string  errors mensage
     **/
-    var $error_msg='';
+    var $error_msg = '';
 
     /**
     *@access private
@@ -143,30 +144,31 @@ class Thumbnail {
     *@param string filename of the source image file
     *@return boolean
     **/
-    function Thumbnail($imgfile) {
+    function Thumbnail($imgfile)
+    {
         $img_info = getimagesize($imgfile);
-        //detect image format
-        switch ($img_info[2]){
-                case 2:
-                    //JPEG
-                    $this->img["format"]="JPEG";
-                    $this->img["src"] = ImageCreateFromJPEG ($imgfile);
-                break;
-                case 3:
-                    //PNG
-                    $this->img["format"]="PNG";
-                    $this->img["src"] = ImageCreateFromPNG ($imgfile);
-                    $this->img["des"] =  $this->img["src"];
-                break;
-                default:
-                    $this->error_msg="Not Supported File";
-                    return false;
-        }//case
-        $this->img["x"] = $img_info[0];  //original dimensions
-        $this->img["y"] = $img_info[1];
-        $this->img["x_thumb"]= $this->img["x"];  //thumbnail dimensions
-        $this->img["y_thumb"]= $this->img["y"];
-        $this->img["des"] =  $this->img["src"]; // thumbnail = original
+
+        switch ($img_info[2]) {
+            case 2:
+                $this->img['format'] = 'JPEG';
+                $this->img['src'] = ImageCreateFromJPEG($imgfile);
+            break;
+            case 3:
+                $this->img['format'] = 'PNG';
+                $this->img['src'] = ImageCreateFromPNG($imgfile);
+                $this->img['des'] =  $this->img['src'];
+            break;
+            default:
+                $this->error_msg = 'Not Supported File';
+                return false;
+        }
+
+        $this->img['x'] = $img_info[0];
+        $this->img['y'] = $img_info[1];
+        $this->img['x_thumb']= $this->img['x'];
+        $this->img['y_thumb']= $this->img['y'];
+        $this->img['des'] =  $this->img['src'];
+
         return true;
     }
 
