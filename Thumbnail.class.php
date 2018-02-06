@@ -631,8 +631,6 @@ class Thumbnail
         return ($destination);
     }
 
-
-
         /**
         * NOT USED : to do: mezclar imagenes a tamaño original, preservar canal alpha y redimensionar
         * Merge multiple images and keep transparency
@@ -642,40 +640,37 @@ class Thumbnail
         * @param mixed
         * @retrun mixed the function returns the resulting image ready for saving
         **/
-        function imagemergealpha($i) {
+        function imagemergealpha($i)
+        {
+            $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
+            imagealphablending($s, true);
+            $z = $i;
+            while($d = each($z)) {
+                imagecopy($s,$d[1],0,0,0,0,imagesx($d[1]),imagesy($d[1]));
+            }
 
-         //create a new image
-         $s = imagecreatetruecolor(imagesx($i[0]),imagesy($i[1]));
+            imagealphablending($s, false);
+            $w = imagesx($s);
+            $h = imagesy($s);
+            for ($x = 0; $x < $w; $x++) {
+                for ($y = 0; $y < $h; $y++) {
+                    $c = imagecolorat($s, $x, $y);
+                    $c = imagecolorsforindex($s, $c);
+                    $z = $i;
+                    $t = 0;
+                    while ($d = each($z)) {
+                        $ta = imagecolorat($d[1], $x, $y);
+                        $ta = imagecolorsforindex($d[1], $ta);
+                        $t += 127 - $ta['alpha'];
+                    }
+                    $t = ($t > 127) ? 127 : $t;
+                    $t = 127 - $t;
+                    $c = imagecolorallocatealpha($s, $c['red'], $c['green'], $c['blue'], $t);
+                    imagesetpixel($s, $x, $y, $c);
+                }
+            }
+            imagesavealpha($s,true);
 
-         //merge all images
-         imagealphablending($s,true);
-         $z = $i;
-         while($d = each($z)) {
-          imagecopy($s,$d[1],0,0,0,0,imagesx($d[1]),imagesy($d[1]));
-         }
-
-         //restore the transparency
-         imagealphablending($s,false);
-         $w = imagesx($s);
-         $h = imagesy($s);
-         for($x=0;$x<$w;$x++) {
-          for($y=0;$y<$h;$y++) {
-           $c = imagecolorat($s,$x,$y);
-           $c = imagecolorsforindex($s,$c);
-           $z = $i;
-           $t = 0;
-           while($d = each($z)) {
-           $ta = imagecolorat($d[1],$x,$y);
-           $ta = imagecolorsforindex($d[1],$ta);
-           $t += 127-$ta['alpha'];
-           }
-           $t = ($t > 127) ? 127 : $t;
-           $t = 127-$t;
-           $c = imagecolorallocatealpha($s,$c['red'],$c['green'],$c['blue'],$t);
-           imagesetpixel($s,$x,$y,$c);
-          }
-         }
-         imagesavealpha($s,true);
-         return $s;
+            return $s;
         }
 }
