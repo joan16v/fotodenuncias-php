@@ -1,27 +1,5 @@
 <?php
 
-/**
-*This is a class that can process an image on the fly by either generate a thumbnail, apply an watermark to the image, or resize it.
-*
-* The processed image can either be displayed in a page, saved to a file, or returned to a variable.
-* It requires the PHP with support for GD library extension in either version 1 or 2. If the GD library version 2 is available it the class can manipulate the images in true color, thus providing better quality of the results of resized images.
-* Features description:
-* - Thumbnail: normal thumbnail generation
-* - Watermark: Text or image in PNG format. Suport multiples positions.
-* - Auto-fitting: adjust the dimensions so that the resized image aspect is not distorted
-* - Scaling: enlarge and shrink the image
-* - Format: both JPEG and PNG are supported, but the watermark image can only be in PNG format as it needs to be transparent
-* - Autodetect the GD library version supported by PHP
-* - Calculate quality factor for a specific file size in JPEG format.
-* - Suport bicubic resample algorithm
-* - Tested: PHP 4 valid
-*
-* @package Thumbnail and Watermark Class
-* @author Emilio Rodriguez <emiliort@gmail.com>
-* @version 1.48 <2005/07/18>
-* @copyright GNU General Public License (GPL)
-**/
-
 class Thumbnail
 {
     /**
