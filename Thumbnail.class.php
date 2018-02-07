@@ -600,33 +600,29 @@ class Thumbnail
     *@param string [optional] prefix of the name Example 'picture'
     *@return string full path of the file to save. Exmaple '/img/picture_my_foto_94949.jpg'
     **/
-    function unique_filename ( $archive_dir , $filename , $file_prefix='') {
-        // checkemaos if file exists
-        $extension= strtolower( substr( strrchr($filename, ".") ,1) );
-        $name=str_replace(".".$extension,'',$filename);
-
-        //  only alfanumerics characters
+    function unique_filename($archive_dir, $filename, $file_prefix = '')
+    {
+        $extension = strtolower(substr(strrchr($filename, "."), 1));
+        $name = str_replace("." . $extension, '', $filename);
         $string_tmp = $name;
-        $name='';
-        while ($string_tmp!='') {
-            $character=substr ($string_tmp, 0, 1);
-            $string_tmp=substr ($string_tmp, 1);
+        $name = '';
+
+        while ($string_tmp != '') {
+            $character = substr($string_tmp, 0, 1);
+            $string_tmp = substr($string_tmp, 1);
             if (eregi("[abcdefghijklmnopqrstuvwxyz0-9]", $character)) {
-                $name=$name.$character;
+                $name = $name . $character;
             } else {
-                $name=$name.'_';
+                $name = $name . '_';
             }
-
         }
 
-        $destination = $file_prefix."_".$name.".".$extension;
+        $destination = $file_prefix . "_" . $name . "." . $extension;
 
-        while (file_exists($archive_dir."/".$destination)) {
-            // if exist, add a random number to the file name
-            srand((double)microtime()*1000000); // random number inizializzation
-            $destination = $file_prefix."_".$name."_".rand(0,999999999).".".$extension;
+        while (file_exists($archive_dir . "/" . $destination)) {
+            srand((double)microtime() * 1000000);
+            $destination = $file_prefix . "_" . $name . "_" . rand(0,999999999) . "." . $extension;
         }
-
 
         return ($destination);
     }
