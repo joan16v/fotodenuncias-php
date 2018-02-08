@@ -526,48 +526,49 @@ class Thumbnail
        return $match[0];
     } // End gdVersion()
 
-    function imageCopyResampleBicubic($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h) {
-      $scaleX = ($src_w - 1) / $dst_w;
-      $scaleY = ($src_h - 1) / $dst_h;
-      $scaleX2 = $scaleX / 2.0;
-      $scaleY2 = $scaleY / 2.0;
-      $tc = imageistruecolor($src_img);
+    function imageCopyResampleBicubic($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)
+    {
+        $scaleX = ($src_w - 1) / $dst_w;
+        $scaleY = ($src_h - 1) / $dst_h;
+        $scaleX2 = $scaleX / 2.0;
+        $scaleY2 = $scaleY / 2.0;
+        $tc = imageistruecolor($src_img);
 
-      for ($y = $src_y; $y < $src_y + $dst_h; $y++) {
-       $sY  = $y * $scaleY;
-       $siY  = (int) $sY;
-       $siY2 = (int) $sY + $scaleY2;
+        for ($y = $src_y; $y < $src_y + $dst_h; $y++) {
+            $sY = $y * $scaleY;
+            $siY = (int) $sY;
+            $siY2 = (int) $sY + $scaleY2;
 
-       for ($x = $src_x; $x < $src_x + $dst_w; $x++) {
-         $sX  = $x * $scaleX;
-         $siX  = (int) $sX;
-         $siX2 = (int) $sX + $scaleX2;
+            for ($x = $src_x; $x < $src_x + $dst_w; $x++) {
+                $sX = $x * $scaleX;
+                $siX = (int) $sX;
+                $siX2 = (int) $sX + $scaleX2;
 
-         if ($tc) {
-           $c1 = imagecolorat($src_img, $siX, $siY2);
-           $c2 = imagecolorat($src_img, $siX, $siY);
-           $c3 = imagecolorat($src_img, $siX2, $siY2);
-           $c4 = imagecolorat($src_img, $siX2, $siY);
+                if ($tc) {
+                    $c1 = imagecolorat($src_img, $siX, $siY2);
+                    $c2 = imagecolorat($src_img, $siX, $siY);
+                    $c3 = imagecolorat($src_img, $siX2, $siY2);
+                    $c4 = imagecolorat($src_img, $siX2, $siY);
 
-           $r = (($c1 + $c2 + $c3 + $c4) >> 2) & 0xFF0000;
-           $g = ((($c1 & 0xFF00) + ($c2 & 0xFF00) + ($c3 & 0xFF00) + ($c4 & 0xFF00)) >> 2) & 0xFF00;
-           $b = ((($c1 & 0xFF)  + ($c2 & 0xFF)  + ($c3 & 0xFF)  + ($c4 & 0xFF))  >> 2);
+                    $r = (($c1 + $c2 + $c3 + $c4) >> 2) & 0xFF0000;
+                    $g = ((($c1 & 0xFF00) + ($c2 & 0xFF00) + ($c3 & 0xFF00) + ($c4 & 0xFF00)) >> 2) & 0xFF00;
+                    $b = ((($c1 & 0xFF) + ($c2 & 0xFF) + ($c3 & 0xFF) + ($c4 & 0xFF)) >> 2);
 
-           imagesetpixel($dst_img, $dst_x + $x - $src_x, $dst_y + $y - $src_y, $r+$g+$b);
-         }  else {
-           $c1 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX, $siY2));
-           $c2 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX, $siY));
-           $c3 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX2, $siY2));
-           $c4 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX2, $siY));
+                    imagesetpixel($dst_img, $dst_x + $x - $src_x, $dst_y + $y - $src_y, $r + $g + $b);
+                }  else {
+                    $c1 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX, $siY2));
+                    $c2 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX, $siY));
+                    $c3 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX2, $siY2));
+                    $c4 = imagecolorsforindex($src_img, imagecolorat($src_img, $siX2, $siY));
 
-           $r = ($c1['red']  + $c2['red']  + $c3['red']  + $c4['red']  ) << 14;
-           $g = ($c1['green'] + $c2['green'] + $c3['green'] + $c4['green']) << 6;
-           $b = ($c1['blue']  + $c2['blue']  + $c3['blue']  + $c4['blue'] ) >> 2;
+                    $r = ($c1['red'] + $c2['red'] + $c3['red']  + $c4['red']) << 14;
+                    $g = ($c1['green'] + $c2['green'] + $c3['green'] + $c4['green']) << 6;
+                    $b = ($c1['blue'] + $c2['blue'] + $c3['blue'] + $c4['blue']) >> 2;
 
-           imagesetpixel($dst_img, $dst_x + $x - $src_x, $dst_y + $y - $src_y, $r+$g+$b);
-         }
-       }
-      }
+                    imagesetpixel($dst_img, $dst_x + $x - $src_x, $dst_y + $y - $src_y, $r + $g + $b);
+                }
+            }
+        }
     }
 
     /**
