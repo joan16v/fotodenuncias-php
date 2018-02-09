@@ -134,7 +134,7 @@ class Thumbnail
             case 3:
                 $this->img['format'] = 'PNG';
                 $this->img['src'] = ImageCreateFromPNG($imgfile);
-                $this->img['des'] =  $this->img['src'];
+                $this->img['des'] = $this->img['src'];
             break;
             default:
                 $this->error_msg = 'Not Supported File';
