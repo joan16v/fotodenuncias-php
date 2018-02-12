@@ -156,8 +156,7 @@ class Thumbnail
     *@param integer height
     *@return boolean
     **/
-    function size_height($size=100) {
-            //height
+    function size_height($size = 100) {
             $this->img["y_thumb"]=$size;
             if ($this->allow_enlarge==true) {
                 $this->img["y_thumb"]=$size;
