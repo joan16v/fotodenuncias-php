@@ -256,8 +256,8 @@ class Thumbnail
     *@access public
     *@return mixed
     **/
-    function dump() {
-        //dump thumb
+    function dump()
+    {
         return $this->img["des"];
     }
 
