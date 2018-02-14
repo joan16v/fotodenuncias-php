@@ -451,15 +451,16 @@ class Thumbnail
     *@access private
     *@return integer
     **/
-    function calc_position_V () {
+    function calc_position_V ()
+    {
         $H_mark = $this->img["y_watermark"];
         $H = $this->img["y_thumb"];
         switch ($this->img_watermark_Valing) {
              case 'CENTER':
-                 $y = $H/2-$H_mark/2;
+                 $y = $H / 2 - $H_mark / 2;
                  break;
              case 'BOTTOM':
-                 $y = $H-$H_mark;
+                 $y = $H - $H_mark;
                  break;
              default:
              case 'TOP':
@@ -469,20 +470,18 @@ class Thumbnail
          return $y;
     }
 
-
     /**
     *@access private
     *@return boolean
     **/
-    function checkgd2(){
-        // TEST the GD version
+    function checkgd2()
+    {
           if (extension_loaded('gd2') && function_exists('imagecreatetruecolor')) {
             return false;
           } else {
             return true;
           }
     }
-
 
     /**
     * Get which version of GD is installed, if any.
