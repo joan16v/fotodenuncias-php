@@ -407,19 +407,20 @@ class Thumbnail
     *@access private
     *@return integer
     **/
-    function calc_text_position_V () {
+    function calc_text_position_V ()
+    {
         $H_mark = imagefontheight ($this->txt_watermark_font);
         $H = $this->img["y_thumb"];
         switch ($this->txt_watermark_Valing) {
              case 'CENTER':
-                 $y = $H/2-$H_mark/2;
+                 $y = $H/2 - $H_mark/2;
                  break;
              case 'BOTTOM':
-                 $y = $H-$H_mark-($this->txt_watermark_Vmargin);
+                 $y = $H - $H_mark - ($this->txt_watermark_Vmargin);
                  break;
              default:
              case 'TOP':
-                $y = 0+($this->txt_watermark_Vmargin);
+                $y = 0 + ($this->txt_watermark_Vmargin);
                  break;
          }
          return $y;
