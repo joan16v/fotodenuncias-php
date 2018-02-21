@@ -208,15 +208,14 @@ class Thumbnail
     *@param integer width or height
     *@return boolean
     **/
-    function size_auto($size=100)   {
-        //size
-        if ($this->img["x"]>=$this->img["y"]) {
+    function size_auto($size = 100)
+    {
+        if ($this->img["x"] >= $this->img["y"]) {
             $this->size_width($size);
         } else {
             $this->size_height($size);
         }
     }
-
 
     /**
     *set the biggest width and height for thumbnail
