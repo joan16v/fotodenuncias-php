@@ -266,8 +266,8 @@ class Thumbnail
     *@param string output file name
     *@return boolean
     **/
-    function save($save="") {
-        //save thumb
+    function save($save = "")
+    {
         if (empty($save)) {
             $this->error_msg='Not Save File';
             return false;
