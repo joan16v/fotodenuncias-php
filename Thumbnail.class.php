@@ -239,8 +239,8 @@ class Thumbnail
     *@access public
     *@return void
     **/
-    function show() {
-        //show thumb
+    function show()
+    {
         Header("Content-Type: image/".$this->img["format"]);
         if ($this->output_format=="PNG") { //PNG
         imagePNG($this->img["des"]);
