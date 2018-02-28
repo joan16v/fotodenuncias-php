@@ -325,7 +325,7 @@ class Thumbnail
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                     $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
                 }
-                // pre copy image, allocating color of water mark, GD < 2 can't resample colors
+
                 if ($this->img_watermark!='' && file_exists($this->img_watermark)) {
                     $this->img["watermark"]=ImageCreateFromPNG ($this->img_watermark);
                     $this->img["x_watermark"] =imagesx($this->img["watermark"]);
@@ -349,7 +349,8 @@ class Thumbnail
     *@access public
     *@param integer maximun file size in bytes
     **/
-    function CalculateQFactor($size)  {
+    function CalculateQFactor($size)
+    {
         //based on: JPEGReducer class version 1,  25 November 2004,  Author: huda m elmatsani, Email :justhuda@netscape.net
 
         //calculate size of each image. 75%, 50%, and 25% quality
