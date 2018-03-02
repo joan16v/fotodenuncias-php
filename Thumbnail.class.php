@@ -242,11 +242,11 @@ class Thumbnail
     function show()
     {
         Header("Content-Type: image/".$this->img["format"]);
-        if ($this->output_format=="PNG") { //PNG
-        imagePNG($this->img["des"]);
+        if ($this->output_format == "PNG") {
+            imagePNG($this->img["des"]);
         } else {
             imageinterlace( $this->img["des"], $this->jpeg_progressive);
-            imageJPEG($this->img["des"],"",$this->quality);
+            imageJPEG($this->img["des"], "", $this->quality);
         }
     }
 
@@ -269,10 +269,10 @@ class Thumbnail
     function save($save = "")
     {
         if (empty($save)) {
-            $this->error_msg='Not Save File';
+            $this->error_msg = 'Not Save File';
             return false;
         }
-        if ($this->output_format=="PNG") {
+        if ($this->output_format == "PNG") {
             imagePNG($this->img["des"], "$save");
         } else {
            imageinterlace( $this->img["des"], $this->jpeg_progressive);
@@ -298,7 +298,7 @@ class Thumbnail
         if ($gd_version >= 2) {
                 $this->img["des"] = ImageCreateTrueColor($X_des, $Y_des);
 
-                if ($this->txt_watermark != '' ) {
+                if ($this->txt_watermark != '') {
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                     $txt_color = imageColorAllocate($this->img["des"], $red, $green, $blue);
                 }
