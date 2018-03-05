@@ -382,19 +382,20 @@ class Thumbnail
     *@access private
     *@return integer
     **/
-    function calc_text_position_H () {
-        $W_mark =  imagefontwidth  ($this->txt_watermark_font)*strlen($this->txt_watermark);
+    function calc_text_position_H()
+    {
+        $W_mark = imagefontwidth($this->txt_watermark_font)*strlen($this->txt_watermark);
         $W = $this->img["x_thumb"];
         switch ($this->txt_watermark_Haling) {
              case 'CENTER':
-                 $x = $W/2-$W_mark/2;
+                 $x = $W/2 - $W_mark/2;
                  break;
              case 'RIGHT':
-                 $x = $W-$W_mark-($this->txt_watermark_Hmargin);
+                 $x = $W - $W_mark - ($this->txt_watermark_Hmargin);
                  break;
              default:
              case 'LEFT':
-                $x = 0+($this->txt_watermark_Hmargin);
+                $x = 0 + ($this->txt_watermark_Hmargin);
                  break;
          }
          return $x;
