@@ -351,9 +351,6 @@ class Thumbnail
     **/
     function CalculateQFactor($size)
     {
-        //based on: JPEGReducer class version 1,  25 November 2004,  Author: huda m elmatsani, Email :justhuda@netscape.net
-
-        //calculate size of each image. 75%, 50%, and 25% quality
         ob_start(); imagejpeg($this->img["des"],'',75);  $buffer = ob_get_contents(); ob_end_clean();
         $size75 = strlen($buffer);
         ob_start(); imagejpeg($this->img["des"],'',50);  $buffer = ob_get_contents(); ob_end_clean();
@@ -361,12 +358,10 @@ class Thumbnail
         ob_start(); imagejpeg($this->img["des"],'',25);  $buffer = ob_get_contents(); ob_end_clean();
         $size25 = strlen($buffer);
 
-        //calculate gradient of size reduction by quality
         $mgrad1 = 25/($size50-$size25);
         $mgrad2 = 25/($size75-$size50);
         $mgrad3 = 50/($size75-$size25);
-        $mgrad  = ($mgrad1+$mgrad2+$mgrad3)/3;
-        //result of approx. quality factor for expected size
+        $mgrad = ($mgrad1+$mgrad2+$mgrad3)/3;
         $q_factor=round($mgrad*($size-$size50)+50);
 
         if ($q_factor<25) {
