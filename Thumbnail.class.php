@@ -320,7 +320,7 @@ class Thumbnail
                     imagestring ( $this->img["des"], $this->txt_watermark_font, $this->calc_text_position_H() , $this->calc_text_position_V(), $this->txt_watermark,$txt_color);
                 }
         } else {
-                $this->img["des"] = ImageCreate($X_des,$Y_des);
+                $this->img["des"] = ImageCreate($X_des, $Y_des);
                 if ($this->txt_watermark!='' ) {
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                     $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
