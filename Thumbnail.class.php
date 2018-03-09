@@ -484,20 +484,22 @@ class Thumbnail
     */
     function gdVersion($user_ver = 0)
     {
-       if (! extension_loaded('gd')) { return; }
+       if (!extension_loaded('gd')) {
+           return;
+       }
        static $gd_ver = 0;
-       // Just accept the specified setting if it's 1.
+
        if ($user_ver == 1) { $gd_ver = 1; return 1; }
-       // Use the static variable if function was called previously.
+
        if ($user_ver !=2 && $gd_ver > 0 ) { return $gd_ver; }
-       // Use the gd_info() function if possible.
+
        if (function_exists('gd_info')) {
            $ver_info = gd_info();
            preg_match('/\d/', $ver_info['GD Version'], $match);
            $gd_ver = $match[0];
            return $match[0];
        }
-       // If phpinfo() is disabled use a specified / fail-safe choice...
+
        if (preg_match('/phpinfo/', ini_get('disable_functions'))) {
            if ($user_ver == 2) {
                $gd_ver = 2;
@@ -507,7 +509,7 @@ class Thumbnail
                return 1;
            }
        }
-       // ...otherwise use phpinfo().
+
        ob_start();
        phpinfo(8);
        $info = ob_get_contents();
@@ -515,8 +517,9 @@ class Thumbnail
        $info = stristr($info, 'gd version');
        preg_match('/\d/', $info, $match);
        $gd_ver = $match[0];
+
        return $match[0];
-    } // End gdVersion()
+    }
 
     function imageCopyResampleBicubic($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)
     {
