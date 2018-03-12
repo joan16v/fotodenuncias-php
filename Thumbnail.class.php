@@ -489,7 +489,10 @@ class Thumbnail
        }
        static $gd_ver = 0;
 
-       if ($user_ver == 1) { $gd_ver = 1; return 1; }
+       if ($user_ver == 1) {
+           $gd_ver = 1;
+           return 1;
+       }
 
        if ($user_ver !=2 && $gd_ver > 0 ) { return $gd_ver; }
 
