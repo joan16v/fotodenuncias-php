@@ -380,7 +380,7 @@ class Thumbnail
     **/
     function calc_text_position_H()
     {
-        $W_mark = imagefontwidth($this->txt_watermark_font)*strlen($this->txt_watermark);
+        $W_mark = imagefontwidth($this->txt_watermark_font) * strlen($this->txt_watermark);
         $W = $this->img["x_thumb"];
         switch ($this->txt_watermark_Haling) {
              case 'CENTER':
