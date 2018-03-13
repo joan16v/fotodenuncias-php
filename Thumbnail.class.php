@@ -366,11 +366,11 @@ class Thumbnail
         $q_factor=round($mgrad*($size-$size50)+50);
 
         if ($q_factor<25) {
-            $this->quality=25;
+            $this->quality = 25;
         } elseif ($q_factor>100) {
-            $this->quality=100;
+            $this->quality = 100;
         } else {
-            $this->quality=$q_factor;
+            $this->quality = $q_factor;
         }
     }
 
