@@ -242,7 +242,7 @@ class Thumbnail
     **/
     function show()
     {
-        Header("Content-Type: image/".$this->img["format"]);
+        header("Content-Type: image/" . $this->img["format"]);
         if ($this->output_format == "PNG") {
             imagePNG($this->img["des"]);
         } else {
@@ -279,6 +279,7 @@ class Thumbnail
            imageinterlace( $this->img["des"], $this->jpeg_progressive);
            imageJPEG($this->img["des"], "$save", $this->quality);
         }
+
         return true;
     }
 
