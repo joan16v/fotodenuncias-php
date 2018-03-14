@@ -366,9 +366,9 @@ class Thumbnail
         $mgrad = ($mgrad1+$mgrad2+$mgrad3)/3;
         $q_factor=round($mgrad*($size-$size50)+50);
 
-        if ($q_factor<25) {
+        if ($q_factor < 25) {
             $this->quality = 25;
-        } elseif ($q_factor>100) {
+        } elseif ($q_factor > 100) {
             $this->quality = 100;
         } else {
             $this->quality = $q_factor;
