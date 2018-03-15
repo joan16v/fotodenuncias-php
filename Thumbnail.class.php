@@ -415,9 +415,10 @@ class Thumbnail
                  break;
              default:
              case 'TOP':
-                $y = 0 + ($this->txt_watermark_Vmargin);
+                 $y = 0 + ($this->txt_watermark_Vmargin);
                  break;
          }
+
          return $y;
     }
 
@@ -454,7 +455,7 @@ class Thumbnail
         $H = $this->img["y_thumb"];
         switch ($this->img_watermark_Valing) {
              case 'CENTER':
-                 $y = $H / 2 - $H_mark / 2;
+                 $y = ($H / 2) - ($H_mark / 2);
                  break;
              case 'BOTTOM':
                  $y = $H - $H_mark;
@@ -464,6 +465,7 @@ class Thumbnail
                 $y = 0;
                  break;
          }
+
          return $y;
     }
 
