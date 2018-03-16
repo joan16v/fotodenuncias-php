@@ -623,8 +623,8 @@ class Thumbnail
             $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
             imagealphablending($s, true);
             $z = $i;
-            while($d = each($z)) {
-                imagecopy($s,$d[1],0,0,0,0,imagesx($d[1]),imagesy($d[1]));
+            while ($d = each($z)) {
+                imagecopy($s, $d[1], 0, 0, 0, 0, imagesx($d[1]), imagesy($d[1]));
             }
 
             imagealphablending($s, false);
