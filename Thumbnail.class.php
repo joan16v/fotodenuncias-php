@@ -360,9 +360,9 @@ class Thumbnail
         ob_start(); imagejpeg($this->img["des"],'',25);  $buffer = ob_get_contents(); ob_end_clean();
         $size25 = strlen($buffer);
 
-        $mgrad1 = 25/($size50-$size25);
-        $mgrad2 = 25/($size75-$size50);
-        $mgrad3 = 50/($size75-$size25);
+        $mgrad1 = 25/($size50 - $size25);
+        $mgrad2 = 25/($size75 - $size50);
+        $mgrad3 = 50/($size75 - $size25);
         $mgrad = ($mgrad1+$mgrad2+$mgrad3)/3;
         $q_factor=round($mgrad*($size-$size50)+50);
 
