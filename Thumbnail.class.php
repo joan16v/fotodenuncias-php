@@ -442,6 +442,7 @@ class Thumbnail
                  $x = 0;
                  break;
          }
+
          return $x;
     }
 
