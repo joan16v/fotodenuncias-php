@@ -385,16 +385,17 @@ class Thumbnail
         $W = $this->img["x_thumb"];
         switch ($this->txt_watermark_Haling) {
              case 'CENTER':
-                 $x = $W/2 - $W_mark/2;
+                 $x = ($W / 2) - ($W_mark / 2);
                  break;
              case 'RIGHT':
                  $x = $W - $W_mark - ($this->txt_watermark_Hmargin);
                  break;
              default:
              case 'LEFT':
-                $x = 0 + ($this->txt_watermark_Hmargin);
+                 $x = 0 + ($this->txt_watermark_Hmargin);
                  break;
          }
+
          return $x;
     }
 
@@ -408,7 +409,7 @@ class Thumbnail
         $H = $this->img["y_thumb"];
         switch ($this->txt_watermark_Valing) {
              case 'CENTER':
-                 $y = $H/2 - $H_mark/2;
+                 $y = ($H / 2) - ($H_mark / 2);
                  break;
              case 'BOTTOM':
                  $y = $H - $H_mark - ($this->txt_watermark_Vmargin);
