@@ -501,12 +501,15 @@ class Thumbnail
            return 1;
        }
 
-       if ($user_ver !=2 && $gd_ver > 0 ) { return $gd_ver; }
+       if (($user_ver != 2) && ($gd_ver > 0)) {
+           return $gd_ver;
+       }
 
        if (function_exists('gd_info')) {
            $ver_info = gd_info();
            preg_match('/\d/', $ver_info['GD Version'], $match);
            $gd_ver = $match[0];
+
            return $match[0];
        }
 
