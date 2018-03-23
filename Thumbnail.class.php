@@ -477,11 +477,11 @@ class Thumbnail
     **/
     function checkgd2()
     {
-          if (extension_loaded('gd2') && function_exists('imagecreatetruecolor')) {
+        if (extension_loaded('gd2') && function_exists('imagecreatetruecolor')) {
             return false;
-          } else {
+        } else {
             return true;
-          }
+        }
     }
 
     /**
