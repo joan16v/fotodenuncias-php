@@ -542,7 +542,7 @@ class Thumbnail
         $scaleY2 = $scaleY / 2.0;
         $tc = imageistruecolor($src_img);
 
-        for ($y = $src_y; $y < $src_y + $dst_h; $y++) {
+        for ($y = $src_y; $y < ($src_y + $dst_h); $y++) {
             $sY = $y * $scaleY;
             $siY = (int) $sY;
             $siY2 = (int) $sY + $scaleY2;
