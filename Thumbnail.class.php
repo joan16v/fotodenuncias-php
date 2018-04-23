@@ -211,7 +211,7 @@ class Thumbnail
     **/
     function size_auto($size = 100)
     {
-        if ($this->img["x"] >= $this->img["y"]) {
+        if ($this->img['x'] >= $this->img['y']) {
             $this->size_width($size);
         } else {
             $this->size_height($size);
