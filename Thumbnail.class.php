@@ -406,7 +406,7 @@ class Thumbnail
     function calc_text_position_V ()
     {
         $H_mark = imagefontheight($this->txt_watermark_font);
-        $H = $this->img["y_thumb"];
+        $H = $this->img['y_thumb'];
         switch ($this->txt_watermark_Valing) {
              case 'CENTER':
                  $y = ($H / 2) - ($H_mark / 2);
