@@ -227,7 +227,7 @@ class Thumbnail
     **/
     function size($size_x,$size_y)
     {
-        if ( (($this->img["x"])/$size_x) >=  (($this->img["y"])/$size_y) ) {
+        if ((($this->img["x"]) / $size_x) >=  (($this->img["y"])/$size_y) ) {
             $this->size_width($size_x);
         } else {
             $this->size_height($size_y);
