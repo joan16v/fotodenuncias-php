@@ -293,7 +293,7 @@ class Thumbnail
         ini_set('memory_limit', $this->memory_limit);
         ini_set('max_execution_time', $this->max_execution_time);
 
-        $X_des = $this->img["x_thumb"];
+        $X_des = $this->img['x_thumb'];
         $Y_des = $this->img["y_thumb"];
 
         $gd_version = $this->gdVersion();
