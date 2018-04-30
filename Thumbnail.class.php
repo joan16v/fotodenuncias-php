@@ -294,7 +294,7 @@ class Thumbnail
         ini_set('max_execution_time', $this->max_execution_time);
 
         $X_des = $this->img['x_thumb'];
-        $Y_des = $this->img["y_thumb"];
+        $Y_des = $this->img['y_thumb'];
 
         $gd_version = $this->gdVersion();
         if ($gd_version >= 2) {
