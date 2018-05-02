@@ -143,9 +143,9 @@ class Thumbnail
 
         $this->img['x'] = $img_info[0];
         $this->img['y'] = $img_info[1];
-        $this->img['x_thumb']= $this->img['x'];
-        $this->img['y_thumb']= $this->img['y'];
-        $this->img['des'] =  $this->img['src'];
+        $this->img['x_thumb'] = $this->img['x'];
+        $this->img['y_thumb'] = $this->img['y'];
+        $this->img['des'] = $this->img['src'];
 
         return true;
     }
