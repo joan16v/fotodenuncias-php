@@ -430,7 +430,7 @@ class Thumbnail
     function calc_position_H()
     {
         $W_mark = $this->img['x_watermark'];
-        $W = $this->img["x_thumb"];
+        $W = $this->img['x_thumb'];
         switch ($this->img_watermark_Haling) {
              case 'CENTER':
                  $x = ($W / 2) - ($W_mark / 2);
