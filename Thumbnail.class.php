@@ -589,7 +589,7 @@ class Thumbnail
     **/
     function unique_filename($archive_dir, $filename, $file_prefix = '')
     {
-        $extension = strtolower(substr(strrchr($filename, "."), 1));
+        $extension = strtolower(substr(strrchr($filename, '.'), 1));
         $name = str_replace("." . $extension, '', $filename);
         $string_tmp = $name;
         $name = '';
