@@ -340,10 +340,10 @@ class Thumbnail
                     imagestring($this->img["des"], $this->txt_watermark_font, $this->calc_text_position_H() , $this->calc_text_position_V(), $this->txt_watermark, $txt_color); // $this->txt_watermark_color);
                 }
         }
-        $this->img["src"] = $this->img['des'];
-        $this->img["x"] = $this->img["x_thumb"];  
-        $this->img["y"] = $this->img["y_thumb"];
 
+        $this->img["src"] = $this->img['des'];
+        $this->img["x"] = $this->img['x_thumb'];
+        $this->img["y"] = $this->img["y_thumb"];
     }
 
     /**
