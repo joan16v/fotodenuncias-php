@@ -604,7 +604,7 @@ class Thumbnail
             }
         }
 
-        $destination = $file_prefix . "_" . $name . "." . $extension;
+        $destination = $file_prefix . '_' . $name . "." . $extension;
 
         while (file_exists($archive_dir . '/' . $destination)) {
             srand((double)microtime() * 1000000);
