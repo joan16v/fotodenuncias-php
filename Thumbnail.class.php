@@ -258,7 +258,7 @@ class Thumbnail
     **/
     function dump()
     {
-        return $this->img["des"];
+        return $this->img['des'];
     }
 
     /**
