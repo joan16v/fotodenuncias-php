@@ -608,7 +608,7 @@ class Thumbnail
 
         while (file_exists($archive_dir . '/' . $destination)) {
             srand((double)microtime() * 1000000);
-            $destination = $file_prefix . "_" . $name . "_" . rand(0,999999999) . "." . $extension;
+            $destination = $file_prefix . '_' . $name . "_" . rand(0,999999999) . "." . $extension;
         }
 
         return ($destination);
