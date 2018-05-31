@@ -343,7 +343,7 @@ class Thumbnail
 
         $this->img["src"] = $this->img['des'];
         $this->img["x"] = $this->img['x_thumb'];
-        $this->img["y"] = $this->img["y_thumb"];
+        $this->img["y"] = $this->img['y_thumb'];
     }
 
     /**
