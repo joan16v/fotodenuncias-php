@@ -129,7 +129,7 @@ class Thumbnail
         switch ($img_info[2]) {
             case 2:
                 $this->img['format'] = 'JPEG';
-                $this->img['src'] = ImageCreateFromJPEG($imgfile);
+                $this->img['src'] = imagecreatefromjpeg($imgfile);
             break;
             case 3:
                 $this->img['format'] = 'PNG';
