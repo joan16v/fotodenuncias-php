@@ -133,7 +133,7 @@ class Thumbnail
             break;
             case 3:
                 $this->img['format'] = 'PNG';
-                $this->img['src'] = ImageCreateFromPNG($imgfile);
+                $this->img['src'] = imagecreatefrompng($imgfile);
                 $this->img['des'] = $this->img['src'];
             break;
             default:
