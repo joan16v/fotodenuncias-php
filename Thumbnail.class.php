@@ -162,7 +162,7 @@ class Thumbnail
             if ($this->allow_enlarge == true) {
                 $this->img['y_thumb'] = $size;
             } else {
-                if ($size < ($this->img["y"])) {
+                if ($size < ($this->img['y'])) {
                     $this->img['y_thumb']=$size;
                 } else {
                     $this->img["y_thumb"] = $this->img["y"];
