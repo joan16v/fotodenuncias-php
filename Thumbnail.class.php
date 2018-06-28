@@ -274,7 +274,7 @@ class Thumbnail
             return false;
         }
         if ($this->output_format == 'PNG') {
-            imagePNG($this->img["des"], "$save");
+            imagePNG($this->img['des'], "$save");
         } else {
             imageinterlace( $this->img["des"], $this->jpeg_progressive);
             imageJPEG($this->img["des"], "$save", $this->quality);
