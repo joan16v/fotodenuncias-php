@@ -244,7 +244,7 @@ class Thumbnail
     {
         header("Content-Type: image/" . $this->img['format']);
         if ($this->output_format == 'PNG') {
-            imagePNG($this->img["des"]);
+            imagePNG($this->img['des']);
         } else {
             imageinterlace( $this->img["des"], $this->jpeg_progressive);
             imageJPEG($this->img["des"], "", $this->quality);
