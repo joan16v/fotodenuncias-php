@@ -314,7 +314,7 @@ class Thumbnail
                 if ($this->img_watermark !='' && file_exists($this->img_watermark)) {
                     $this->img['watermark'] = imagecreatefrompng($this->img_watermark);
                     $this->img['x_watermark'] = imagesx($this->img['watermark']);
-                    $this->img['y_watermark'] = imagesy($this->img["watermark"]);
+                    $this->img['y_watermark'] = imagesy($this->img['watermark']);
                     imagecopyresampled($this->img['des'], $this->img['watermark'], $this->calc_position_H(), $this->calc_position_V (), 0, 0, $this->img["x_watermark"], $this->img["y_watermark"],$this->img["x_watermark"], $this->img["y_watermark"]);
                 }
 
