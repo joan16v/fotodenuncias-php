@@ -652,7 +652,7 @@ class Thumbnail
                     imagesetpixel($s, $x, $y, $c);
                 }
             }
-            imagesavealpha($s,true);
+            imagesavealpha($s, true);
 
             return $s;
         }
