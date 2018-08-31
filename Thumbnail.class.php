@@ -247,7 +247,7 @@ class Thumbnail
             imagePNG($this->img['des']);
         } else {
             imageinterlace( $this->img['des'], $this->jpeg_progressive);
-            imageJPEG($this->img['des'], '', $this->quality);
+            imagejpeg($this->img['des'], '', $this->quality);
         }
     }
 
