@@ -451,7 +451,7 @@ class Thumbnail
     *@access private
     *@return integer
     **/
-    function calc_position_V ()
+    function calc_position_V()
     {
         $H_mark = $this->img['y_watermark'];
         $H = $this->img['y_thumb'];
