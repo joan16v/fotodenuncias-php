@@ -185,7 +185,7 @@ class Thumbnail
     **/
     function size_width($size = 100)
     {
-            if ($this->allow_enlarge == true) {
+        if ($this->allow_enlarge == true) {
                 $this->img['x_thumb'] = $size;
             } else {
                 if ($size < ($this->img['x'])) {
