@@ -159,7 +159,7 @@ class Thumbnail
     function size_height($size = 100)
     {
         $this->img['y_thumb'] = $size;
-            if ($this->allow_enlarge == true) {
+        if ($this->allow_enlarge == true) {
                 $this->img['y_thumb'] = $size;
             } else {
                 if ($size < ($this->img['y'])) {
