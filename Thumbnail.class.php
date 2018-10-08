@@ -160,7 +160,7 @@ class Thumbnail
     {
         $this->img['y_thumb'] = $size;
         if ($this->allow_enlarge == true) {
-                $this->img['y_thumb'] = $size;
+            $this->img['y_thumb'] = $size;
             } else {
                 if ($size < ($this->img['y'])) {
                     $this->img['y_thumb'] = $size;
