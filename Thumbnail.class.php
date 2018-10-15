@@ -164,7 +164,7 @@ class Thumbnail
         } else {
             if ($size < ($this->img['y'])) {
                 $this->img['y_thumb'] = $size;
-                } else {
+            } else {
                     $this->img['y_thumb'] = $this->img['y'];
                 }
 
