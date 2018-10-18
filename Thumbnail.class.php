@@ -168,7 +168,8 @@ class Thumbnail
                 $this->img['y_thumb'] = $this->img['y'];
             }
 
-            }
+        }
+
             if ($this->img['y'] > 0) {
                 $this->img['x_thumb'] = ($this->img['y_thumb'] / $this->img['y']) * $this->img['x'];
             } else {
