@@ -190,11 +190,10 @@ class Thumbnail
             $this->img['x_thumb'] = $size;
         } else {
             if ($size < ($this->img['x'])) {
-                    $this->img['x_thumb'] = $size;
+                $this->img['x_thumb'] = $size;
                 } else {
                     $this->img['x_thumb'] = $this->img['x'];
                 }
-
             }
             if ($this->img['x'] > 0) {
                 $this->img['y_thumb'] = ($this->img['x_thumb'] / $this->img['x']) * $this->img['y'];
