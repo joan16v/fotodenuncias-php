@@ -171,7 +171,7 @@ class Thumbnail
         }
 
         if ($this->img['y'] > 0) {
-                $this->img['x_thumb'] = ($this->img['y_thumb'] / $this->img['y']) * $this->img['x'];
+            $this->img['x_thumb'] = ($this->img['y_thumb'] / $this->img['y']) * $this->img['x'];
             } else {
                 $this->error_msg = 'Invalid size : Y';
                 return false;
