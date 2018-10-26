@@ -167,7 +167,6 @@ class Thumbnail
             } else {
                 $this->img['y_thumb'] = $this->img['y'];
             }
-
         }
 
         if ($this->img['y'] > 0) {
