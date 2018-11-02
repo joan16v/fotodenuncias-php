@@ -174,7 +174,7 @@ class Thumbnail
         } else {
             $this->error_msg = 'Invalid size : Y';
             return false;
-            }
+        }
     }
 
     /**
