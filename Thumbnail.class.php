@@ -272,6 +272,7 @@ class Thumbnail
             $this->error_msg = 'Not Save File';
             return false;
         }
+
         if ($this->output_format == 'PNG') {
             imagePNG($this->img['des'], "$save");
         } else {
