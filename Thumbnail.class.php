@@ -193,15 +193,15 @@ class Thumbnail
                 $this->img['x_thumb'] = $size;
             } else {
                 $this->img['x_thumb'] = $this->img['x'];
-                }
             }
+        }
 
-            if ($this->img['x'] > 0) {
-                $this->img['y_thumb'] = ($this->img['x_thumb'] / $this->img['x']) * $this->img['y'];
-            } else {
-                $this->error_msg = 'Invalid size : x';
-                return false;
-            }
+        if ($this->img['x'] > 0) {
+            $this->img['y_thumb'] = ($this->img['x_thumb'] / $this->img['x']) * $this->img['y'];
+        } else {
+            $this->error_msg = 'Invalid size : x';
+            return false;
+        }
     }
 
     /**
