@@ -244,6 +244,7 @@ class Thumbnail
     function show()
     {
         header("Content-Type: image/" . $this->img['format']);
+
         if ($this->output_format == 'PNG') {
             imagePNG($this->img['des']);
         } else {
