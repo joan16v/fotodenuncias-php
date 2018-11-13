@@ -302,7 +302,7 @@ class Thumbnail
         if ($gd_version >= 2) {
             $this->img['des'] = ImageCreateTrueColor($X_des, $Y_des);
 
-                if ($this->txt_watermark != '') {
+            if ($this->txt_watermark != '') {
                     sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                     $txt_color = imageColorAllocate($this->img['des'], $red, $green, $blue);
                 }
