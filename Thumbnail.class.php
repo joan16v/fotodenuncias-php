@@ -305,7 +305,7 @@ class Thumbnail
             if ($this->txt_watermark != '') {
                 sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
                 $txt_color = imageColorAllocate($this->img['des'], $red, $green, $blue);
-                }
+            }
 
                 if (!$this->bicubic_resample) {
                     imagecopyresampled ($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
