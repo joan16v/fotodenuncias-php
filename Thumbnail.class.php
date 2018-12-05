@@ -321,7 +321,7 @@ class Thumbnail
             }
 
             if ($this->txt_watermark!='' ) {
-                    imagestring ( $this->img['des'], $this->txt_watermark_font, $this->calc_text_position_H() , $this->calc_text_position_V(), $this->txt_watermark,$txt_color);
+                imagestring ( $this->img['des'], $this->txt_watermark_font, $this->calc_text_position_H() , $this->calc_text_position_V(), $this->txt_watermark,$txt_color);
                 }
         } else {
                 $this->img['des'] = ImageCreate($X_des, $Y_des);
