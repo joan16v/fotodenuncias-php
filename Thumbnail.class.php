@@ -330,7 +330,7 @@ class Thumbnail
                 $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
             }
 
-                if ($this->img_watermark != '' && file_exists($this->img_watermark)) {
+            if ($this->img_watermark != '' && file_exists($this->img_watermark)) {
                     $this->img['watermark'] = imagecreatefrompng($this->img_watermark);
                     $this->img['x_watermark'] = imagesx($this->img['watermark']);
                     $this->img['y_watermark'] = imagesy($this->img['watermark']);
