@@ -336,7 +336,8 @@ class Thumbnail
                 $this->img['y_watermark'] = imagesy($this->img['watermark']);
                 imagecopy($this->img['des'], $this->img['watermark'], $this->calc_position_H (), $this->calc_position_V (), 0, 0, $this->img['x_watermark'], $this->img['y_watermark']);
             }
-                imagecopyresized($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
+
+            imagecopyresized($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
                 @imagecopy ($this->img['des'], $this->img['watermark'], $this->calc_position_H(), $this->calc_position_V(), 0, 0, $this->img['x_watermark'], $this->img['y_watermark']);
                 if ($this->txt_watermark != '') {
                     imagestring($this->img['des'], $this->txt_watermark_font, $this->calc_text_position_H(), $this->calc_text_position_V(), $this->txt_watermark, $txt_color);
