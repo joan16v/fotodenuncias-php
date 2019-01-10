@@ -436,7 +436,7 @@ class Thumbnail
         $W_mark = $this->img['x_watermark'];
         $W = $this->img['x_thumb'];
         switch ($this->img_watermark_Haling) {
-             case 'CENTER':
+            case 'CENTER':
                  $x = ($W / 2) - ($W_mark / 2);
                  break;
              case 'RIGHT':
