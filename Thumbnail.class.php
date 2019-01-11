@@ -468,7 +468,7 @@ class Thumbnail
                  break;
              default:
              case 'TOP':
-                $y = 0;
+                 $y = 0;
                  break;
          }
 
