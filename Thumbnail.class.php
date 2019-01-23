@@ -327,7 +327,7 @@ class Thumbnail
             $this->img['des'] = ImageCreate($X_des, $Y_des);
             if ($this->txt_watermark != '') {
                 sscanf($this->txt_watermark_color, "%2x%2x%2x", $red, $green, $blue);
-                $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
+                $txt_color=imagecolorallocate($this->img["des"] ,$red, $green, $blue);
             }
 
             if ($this->img_watermark != '' && file_exists($this->img_watermark)) {
