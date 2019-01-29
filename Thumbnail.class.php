@@ -310,7 +310,7 @@ class Thumbnail
             if (!$this->bicubic_resample) {
                 imagecopyresampled ($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
             } else {
-                $this->imageCopyResamplebicubic($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
+                $this->imagecopyResamplebicubic($this->img['des'], $this->img['src'], 0, 0, 0, 0, $X_des, $Y_des, $this->img['x'], $this->img['y']);
             }
 
             if ($this->img_watermark !='' && file_exists($this->img_watermark)) {
