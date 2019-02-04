@@ -359,7 +359,7 @@ class Thumbnail
     {
         ob_start(); imagejpeg($this->img['des'], '', 75); $buffer = ob_get_contents(); ob_end_clean();
         $size75 = strlen($buffer);
-        ob_start(); imagejpeg($this->img['des'],'',50); $buffer = ob_get_contents(); ob_end_clean();
+        ob_start(); imagejpeg($this->img['des'], '',50); $buffer = ob_get_contents(); ob_end_clean();
         $size50 = strlen($buffer);
         ob_start(); imagejpeg($this->img['des'],'',25); $buffer = ob_get_contents(); ob_end_clean();
         $size25 = strlen($buffer);
