@@ -10,7 +10,7 @@ class Thumbnail
 
     /**
     *@access public
-    *@var string output format, default JPG, valid values 'JPG' | 'PNG'
+    *@var string output format, default JPG, valid values 'JPG'|'PNG'
     **/
     var $output_format = 'JPG';
 
