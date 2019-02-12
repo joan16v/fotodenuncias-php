@@ -490,7 +490,6 @@ class Thumbnail
 
     /**
     * Get which version of GD is installed, if any.
-    *
     * Returns the version (1 or 2) of the GD extension.
     */
     function gdVersion($user_ver = 0)
