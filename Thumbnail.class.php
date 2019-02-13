@@ -537,7 +537,7 @@ class Thumbnail
        return $match[0];
     }
 
-    function imageCopyResampleBicubic($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)
+    function imagecopyresamplebicubic($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)
     {
         $scaleX = ($src_w - 1) / $dst_w;
         $scaleY = ($src_h - 1) / $dst_h;
