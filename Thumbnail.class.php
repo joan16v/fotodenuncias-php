@@ -137,7 +137,7 @@ class Thumbnail
                 $this->img['des'] = $this->img['src'];
             break;
             default:
-                $this->error_msg = 'Not Supported File';
+                $this->error_msg = 'Not supported file';
                 return false;
         }
 
