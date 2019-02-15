@@ -34,7 +34,7 @@ class Thumbnail
 
     /**
     *@access public
-    *@var string [OPTIONAL] set watermark vertical position, TOP | CENTER | BOTTOM
+    *@var string [OPTIONAL] set watermark vertical position, TOP|CENTER|BOTTOM
     **/
     var $img_watermark_Valing = 'TOP';
 
