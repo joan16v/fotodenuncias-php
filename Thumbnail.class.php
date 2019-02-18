@@ -4,7 +4,7 @@ class Thumbnail
 {
     /**
     *@access public
-    *@var integer Quality factor for JPEG output format, default 75
+    *@var integer Quality factor for JPEG output format
     **/
     var $quality = 75;
 
