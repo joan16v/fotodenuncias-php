@@ -16,7 +16,7 @@ class Thumbnail
 
     /**
     *@access public
-    *@var integer set JPEG output format to progressive JPEG : 0 = no , 1 = yes
+    *@var integer set JPEG output format to progressive JPEG : 0 = no, 1 = yes
     **/
     var $jpeg_progressive = 0;
 
