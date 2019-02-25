@@ -52,7 +52,7 @@ class Thumbnail
 
     /**
     *@access public
-    *@var string [OPTIONAL] set watermark text color , RGB Hexadecimal[RECOMENDED ONLY WITH GD 2 ]
+    *@var string [OPTIONAL] set watermark text color , RGB Hexadecimal[RECOMENDED ONLY WITH GD 2]
     **/
     var $txt_watermark_color = '000000';
 
