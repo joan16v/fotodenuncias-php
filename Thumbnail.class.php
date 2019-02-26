@@ -287,9 +287,9 @@ class Thumbnail
     }
 
     /**
-    *generate image
-    *@access public
-    *@return boolean
+    * generate image
+    * @access public
+    * @return boolean
     **/
     function process ()
     {
