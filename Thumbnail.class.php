@@ -351,9 +351,9 @@ class Thumbnail
     }
 
     /**
-    *Calculate JPEG quality factor for a specific size in bytes
-    *@access public
-    *@param integer maximun file size in bytes
+    * Calculate JPEG quality factor for a specific size in bytes
+    * @access public
+    * @param integer maximun file size in bytes
     **/
     function CalculateQFactor($size)
     {
