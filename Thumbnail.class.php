@@ -205,10 +205,10 @@ class Thumbnail
     }
 
     /**
-    *set the biggest width or height for thumbnail
-    *@access public
-    *@param integer width or height
-    *@return boolean
+    * Set the biggest width or height for thumbnail
+    * @access public
+    * @param integer width or height
+    * @return boolean
     **/
     function size_auto($size = 100)
     {
