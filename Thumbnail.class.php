@@ -3,8 +3,8 @@
 class Thumbnail
 {
     /**
-    *@access public
-    *@var integer Quality factor for JPEG output format
+    * @access public
+    * @var integer Quality factor for JPEG output format
     **/
     var $quality = 75;
 
