@@ -9,8 +9,8 @@ class Thumbnail
     var $quality = 75;
 
     /**
-    *@access public
-    *@var string output format, default JPG, valid values 'JPG'|'PNG'
+    * @access public
+    * @var string output format, default JPG, valid values 'JPG'|'PNG'
     **/
     var $output_format = 'JPG';
 
