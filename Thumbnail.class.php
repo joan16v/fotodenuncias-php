@@ -21,8 +21,8 @@ class Thumbnail
     var $jpeg_progressive = 0;
 
     /**
-    *@access public
-    *@var boolean allow to enlarge the thumbnail.
+    * @access public
+    * @var boolean allow to enlarge the thumbnail.
     **/
     var $allow_enlarge = false;
 
