@@ -27,8 +27,8 @@ class Thumbnail
     var $allow_enlarge = false;
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2]
+    * @access public
+    * @var string [OPTIONAL] set watermark source file, only PNG format [RECOMENDED ONLY WITH GD 2]
     **/
     var $img_watermark = '';
 
