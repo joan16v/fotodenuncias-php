@@ -39,8 +39,8 @@ class Thumbnail
     var $img_watermark_Valing = 'TOP';
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set watermark horizonatal position, LEFT|CENTER|RIGHT
+    * @access public
+    * @var string [OPTIONAL] set watermark horizonatal position, LEFT|CENTER|RIGHT
     **/
     var $img_watermark_Haling = 'LEFT';
 
