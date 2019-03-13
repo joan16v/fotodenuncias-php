@@ -45,8 +45,8 @@ class Thumbnail
     var $img_watermark_Haling = 'LEFT';
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set watermark text [RECOMENDED ONLY WITH GD 2]
+    * @access public
+    * @var string [OPTIONAL] set watermark text [RECOMENDED ONLY WITH GD 2]
     **/
     var $txt_watermark = '';
 
