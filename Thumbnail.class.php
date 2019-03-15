@@ -57,8 +57,8 @@ class Thumbnail
     var $txt_watermark_color = '000000';
 
     /**
-    *@access public
-    *@var integer [OPTIONAL] set watermark text font: 1,2,3,4,5
+    * @access public
+    * @var integer [OPTIONAL] set watermark text font: 1,2,3,4,5
     **/
     var $txt_watermark_font = 1;
 
