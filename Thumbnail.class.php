@@ -63,8 +63,8 @@ class Thumbnail
     var $txt_watermark_font = 1;
 
     /**
-    *@access public
-    *@var string  [OPTIONAL] set watermark text vertical position, TOP | CENTER | BOTTOM
+    * @access public
+    * @var string  [OPTIONAL] set watermark text vertical position, TOP | CENTER | BOTTOM
     **/
     var $txt_watermark_Valing = 'TOP';
 
