@@ -69,8 +69,8 @@ class Thumbnail
     var $txt_watermark_Valing = 'TOP';
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set watermark text horizonatal position, LEFT | CENTER | RIGHT
+    * @access public
+    * @var string [OPTIONAL] set watermark text horizonatal position, LEFT | CENTER | RIGHT
     **/
     var $txt_watermark_Haling = 'LEFT';
 
