@@ -75,8 +75,8 @@ class Thumbnail
     var $txt_watermark_Haling = 'LEFT';
 
     /**
-    *@access public
-    *@var integer [OPTIONAL] set watermark text horizonatal margin in pixels
+    * @access public
+    * @var integer [OPTIONAL] set watermark text horizonatal margin in pixels
     **/
     var $txt_watermark_Hmargin = 10;
 
