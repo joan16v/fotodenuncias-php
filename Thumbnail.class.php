@@ -81,8 +81,8 @@ class Thumbnail
     var $txt_watermark_Hmargin = 10;
 
     /**
-    *@access public
-    *@var integer [OPTIONAL] set watermark text vertical margin in pixels
+    * @access public
+    * @var integer [OPTIONAL] set watermark text vertical margin in pixels
     **/
     var $txt_watermark_Vmargin = 10;
 
