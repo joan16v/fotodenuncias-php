@@ -87,8 +87,8 @@ class Thumbnail
     var $txt_watermark_Vmargin = 10;
 
     /**
-    *@access public
-    *@var bool [OPTIONAL] set resample algorithm to bicubic
+    * @access public
+    * @var bool [OPTIONAL] set resample algorithm to bicubic
     **/
     var $bicubic_resample = false;
 
