@@ -93,8 +93,8 @@ class Thumbnail
     var $bicubic_resample = false;
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set maximun memory usage, default 8 MB ('8M'). (use '16M' for big images)
+    * @access public
+    * @var string [OPTIONAL] set maximun memory usage, default 8 MB ('8M'). (use '16M' for big images)
     **/
     var $memory_limit = '32M';
 
