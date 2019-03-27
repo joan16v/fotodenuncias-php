@@ -99,8 +99,8 @@ class Thumbnail
     var $memory_limit = '32M';
 
     /**
-    *@access public
-    *@var string [OPTIONAL] set maximun execution time, default 30 seconds ('30'). (use '60' for big images)
+    * @access public
+    * @var string [OPTIONAL] set maximun execution time, default 30 seconds ('30'). (use '60' for big images)
     **/
     var $max_execution_time = '30';
 
