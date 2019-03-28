@@ -105,8 +105,8 @@ class Thumbnail
     var $max_execution_time = '30';
 
     /**
-    *@access public
-    *@var string  errors mensage
+    * @access public
+    * @var string  errors mensage
     **/
     var $error_msg = '';
 
