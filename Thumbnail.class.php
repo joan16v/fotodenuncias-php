@@ -111,8 +111,8 @@ class Thumbnail
     var $error_msg = '';
 
     /**
-    *@access private
-    *@var mixed images
+    * @access private
+    * @var mixed images
     **/
     var $img;
 
