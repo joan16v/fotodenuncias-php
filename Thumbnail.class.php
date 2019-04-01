@@ -117,10 +117,10 @@ class Thumbnail
     var $img;
 
     /**
-    *open source image
-    *@access public
-    *@param string filename of the source image file
-    *@return boolean
+    * open source image
+    * @access public
+    * @param string filename of the source image file
+    * @return boolean
     **/
     function Thumbnail($imgfile)
     {
