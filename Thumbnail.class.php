@@ -151,10 +151,10 @@ class Thumbnail
     }
 
     /**
-    *set height for thumbnail
-    *@access public
-    *@param integer height
-    *@return boolean
+    * set height for thumbnail
+    * @access public
+    * @param integer height
+    * @return boolean
     **/
     function size_height($size = 100)
     {
