@@ -179,10 +179,10 @@ class Thumbnail
     }
 
     /**
-    *set width for thumbnail
-    *@access public
-    *@param integer width
-    *@return boolean
+    * set width for thumbnail
+    * @access public
+    * @param integer width
+    * @return boolean
     **/
     function size_width($size = 100)
     {
