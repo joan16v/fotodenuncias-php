@@ -220,11 +220,11 @@ class Thumbnail
     }
 
     /**
-    *set the biggest width and height for thumbnail
-    *@access public
-    *@param integer width
-    *@param integer height
-    *@return boolean
+    * set the biggest width and height for thumbnail
+    * @access public
+    * @param integer width
+    * @param integer height
+    * @return boolean
     **/
     function size($size_x, $size_y)
     {
