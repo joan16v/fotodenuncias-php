@@ -237,9 +237,9 @@ class Thumbnail
 
 
     /**
-    *show your thumbnail, output image and headers
-    *@access public
-    *@return void
+    * show your thumbnail, output image and headers
+    * @access public
+    * @return void
     **/
     function show()
     {
