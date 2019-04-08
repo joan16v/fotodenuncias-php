@@ -254,9 +254,9 @@ class Thumbnail
     }
 
     /**
-    *return the result thumbnail
-    *@access public
-    *@return mixed
+    * return the result thumbnail
+    * @access public
+    * @return mixed
     **/
     function dump()
     {
