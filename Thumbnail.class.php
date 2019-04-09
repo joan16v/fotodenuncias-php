@@ -264,10 +264,10 @@ class Thumbnail
     }
 
     /**
-    *save your thumbnail to file
-    *@access public
-    *@param string output file name
-    *@return boolean
+    * save your thumbnail to file
+    * @access public
+    * @param string output file name
+    * @return boolean
     **/
     function save($save = '')
     {
