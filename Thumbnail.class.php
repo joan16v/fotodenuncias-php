@@ -404,8 +404,8 @@ class Thumbnail
     }
 
     /**
-    *@access private
-    *@return integer
+    * @access private
+    * @return integer
     **/
     function calc_text_position_V ()
     {
