@@ -476,8 +476,8 @@ class Thumbnail
     }
 
     /**
-    *@access private
-    *@return boolean
+    * @access private
+    * @return boolean
     **/
     function checkgd2()
     {
