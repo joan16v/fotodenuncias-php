@@ -583,12 +583,12 @@ class Thumbnail
     }
 
     /**
-    *generate a unique filename in a directory like prefix_filename_randon.ext
-    *@access public
-    *@param string path of the destination dir. Example '/img'
-    *@param string name of the file to save. Example 'my_foto.jpg'
-    *@param string [optional] prefix of the name Example 'picture'
-    *@return string full path of the file to save. Exmaple '/img/picture_my_foto_94949.jpg'
+    * generate a unique filename in a directory like prefix_filename_randon.ext
+    * @access public
+    * @param string path of the destination dir. Example '/img'
+    * @param string name of the file to save. Example 'my_foto.jpg'
+    * @param string [optional] prefix of the name Example 'picture'
+    * @return string full path of the file to save. Exmaple '/img/picture_my_foto_94949.jpg'
     **/
     function unique_filename($archive_dir, $filename, $file_prefix = '')
     {
