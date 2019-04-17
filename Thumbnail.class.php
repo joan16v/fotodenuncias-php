@@ -617,7 +617,7 @@ class Thumbnail
         return ($destination);
     }
 
-        /**
+    /**
         * NOT USED : to do: mezclar imagenes a tamaño original, preservar canal alpha y redimensionar
         * Merge multiple images and keep transparency
         * $i is and array of the images to be merged:
