@@ -620,7 +620,7 @@ class Thumbnail
     /**
     * NOT USED : to do: mezclar imagenes a tamaño original, preservar canal alpha y redimensionar
     * Merge multiple images and keep transparency
-        * $i is and array of the images to be merged:
+    * $i is and array of the images to be merged:
         * $i[1] will be overlayed over $i[0]
         * $i[2] will be overlayed over that
         * @param mixed
