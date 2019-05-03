@@ -624,7 +624,7 @@ class Thumbnail
     * $i[1] will be overlayed over $i[0]
     * $i[2] will be overlayed over that
     * @param mixed
-        * @retrun mixed the function returns the resulting image ready for saving
+    * @retrun mixed the function returns the resulting image ready for saving
         **/
         function imagemergealpha($i)
         {
