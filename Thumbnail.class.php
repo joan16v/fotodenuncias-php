@@ -625,7 +625,7 @@ class Thumbnail
     * $i[2] will be overlayed over that
     * @param mixed
     * @retrun mixed the function returns the resulting image ready for saving
-        **/
+    **/
         function imagemergealpha($i)
         {
             $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
