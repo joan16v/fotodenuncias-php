@@ -627,7 +627,7 @@ class Thumbnail
     * @retrun mixed the function returns the resulting image ready for saving
     **/
     function imagemergealpha($i)
-        {
+    {
             $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
             imagealphablending($s, true);
             $z = $i;
