@@ -628,7 +628,7 @@ class Thumbnail
     **/
     function imagemergealpha($i)
     {
-            $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
+        $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
             imagealphablending($s, true);
             $z = $i;
             while ($d = each($z)) {
