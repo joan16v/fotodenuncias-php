@@ -629,7 +629,7 @@ class Thumbnail
     function imagemergealpha($i)
     {
         $s = imagecreatetruecolor(imagesx($i[0]), imagesy($i[1]));
-            imagealphablending($s, true);
+        imagealphablending($s, true);
             $z = $i;
             while ($d = each($z)) {
                 imagecopy($s, $d[1], 0, 0, 0, 0, imagesx($d[1]), imagesy($d[1]));
