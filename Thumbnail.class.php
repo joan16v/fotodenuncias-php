@@ -632,7 +632,7 @@ class Thumbnail
         imagealphablending($s, true);
         $z = $i;
         while ($d = each($z)) {
-                imagecopy($s, $d[1], 0, 0, 0, 0, imagesx($d[1]), imagesy($d[1]));
+            imagecopy($s, $d[1], 0, 0, 0, 0, imagesx($d[1]), imagesy($d[1]));
             }
 
             imagealphablending($s, false);
