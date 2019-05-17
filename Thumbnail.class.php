@@ -635,7 +635,7 @@ class Thumbnail
             imagecopy($s, $d[1], 0, 0, 0, 0, imagesx($d[1]), imagesy($d[1]));
         }
 
-            imagealphablending($s, false);
+        imagealphablending($s, false);
             $w = imagesx($s);
             $h = imagesy($s);
             for ($x = 0; $x < $w; $x++) {
