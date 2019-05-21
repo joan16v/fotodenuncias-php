@@ -171,7 +171,7 @@ class Thumbnail
         }
 
         if ($this->img['y'] > 0) {
-            $this->img['x_thumb'] = ($this->img['y_thumb'] / $this->img['y']) * $this->img['x'];
+            $this->img['x_thumb'] = ($this->img['y_thumb'] / $this->img['y']) * $this->im['x'];
         } else {
             $this->error_msg = 'Invalid size : Y';
             return false;
@@ -637,7 +637,7 @@ class Thumbnail
 
         imagealphablending($s, false);
         $w = imagesx($s);
-            $h = imagesy($s);
+        $h = imagesy($s);
             for ($x = 0; $x < $w; $x++) {
                 for ($y = 0; $y < $h; $y++) {
                     $c = imagecolorat($s, $x, $y);
