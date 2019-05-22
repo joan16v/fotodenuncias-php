@@ -638,7 +638,7 @@ class Thumbnail
         imagealphablending($s, false);
         $w = imagesx($s);
         $h = imagesy($s);
-            for ($x = 0; $x < $w; $x++) {
+        for ($x = 0; $x < $w; $x++) {
                 for ($y = 0; $y < $h; $y++) {
                     $c = imagecolorat($s, $x, $y);
                     $c = imagecolorsforindex($s, $c);
