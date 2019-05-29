@@ -642,7 +642,7 @@ class Thumbnail
             for ($y = 0; $y < $h; $y++) {
                 $c = imagecolorat($s, $x, $y);
                 $c = imagecolorsforindex($s, $c);
-                    $z = $i;
+                $z = $i;
                     $t = 0;
                     while ($d = each($z)) {
                         $ta = imagecolorat($d[1], $x, $y);
