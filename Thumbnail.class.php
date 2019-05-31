@@ -644,7 +644,7 @@ class Thumbnail
                 $c = imagecolorsforindex($s, $c);
                 $z = $i;
                 $t = 0;
-                    while ($d = each($z)) {
+                while ($d = each($z)) {
                         $ta = imagecolorat($d[1], $x, $y);
                         $ta = imagecolorsforindex($d[1], $ta);
                         $t += 127 - $ta['alpha'];
