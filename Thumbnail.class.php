@@ -647,7 +647,7 @@ class Thumbnail
                 while ($d = each($z)) {
                     $ta = imagecolorat($d[1], $x, $y);
                     $ta = imagecolorsforindex($d[1], $ta);
-                        $t += 127 - $ta['alpha'];
+                    $t += 127 - $ta['alpha'];
                     }
                     $t = ($t > 127) ? 127 : $t;
                     $t = 127 - $t;
