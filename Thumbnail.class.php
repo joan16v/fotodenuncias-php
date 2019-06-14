@@ -654,7 +654,7 @@ class Thumbnail
                 $t = 127 - $t;
                 $c = imagecolorallocatealpha($s, $c['red'], $c['green'], $c['blue'], $t);
                 imagesetpixel($s, $x, $y, $c);
-                }
+            }
             }
 
             imagesavealpha($s, true);
