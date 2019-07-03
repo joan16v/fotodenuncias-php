@@ -659,6 +659,6 @@ class Thumbnail
 
         imagesavealpha($s, true);
 
-            return $s;
+        return $s;
         }
 }
