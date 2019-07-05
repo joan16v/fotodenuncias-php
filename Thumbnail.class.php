@@ -497,6 +497,7 @@ class Thumbnail
        if (!extension_loaded('gd')) {
            return;
        }
+
        static $gd_ver = 0;
 
        if ($user_ver == 1) {
